@@ -1,0 +1,69 @@
+---
+title: "Crie scaffolds para seus projetos na velocidade da luz!"
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Com <b>Kuma</b> você pode criar e compartilhar scaffalds de projetos para qualquer linguagem de programação com uma TUI intuiva sem precisar de muito esforço!
+  image:
+    file: ../../../assets/icon.png
+  actions:
+    - text: Começar!
+      link: /guides/example/
+      icon: right-arrow
+    - text: GitHub
+      link: https://github.com/arthurbcp/kuma
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import BuiltWithKuma from "../../../components/BuiltWithKuma.astro";
+import Features from "../../../components/Features.astro";
+
+<Features
+  cards={[
+    {
+      title: "Crie scaffolds para seus projetos",
+      description:
+        "Com Kuma você pode criar scaffolds de projetos com uma TUI pesonalizada para qualquer linguagem de programação usando apenas templates",
+    },
+    {
+      title: "Automatize processos",
+      description:
+        "Utilize as Runs para criar uma interface por TUI totalmente personalizada para automatizar processos ou gerar scaffolds de código customizados através de variáveis",
+    },
+    {
+      title: "CLI poderosa",
+      description:
+        "Kuma providencia uma CLI poderosa juntamente com um TUI amigável para auxiliar no seu dia a dia",
+    },
+    {
+      title: "Compartilhe com a comunidade",
+      description:
+        "Crie módulos e compartilhe com a comunidade através do GitHub e use módulos criados por outras pessoas",
+    },
+  ]}
+/>
+
+<BuiltWithKuma
+  projects={[
+    {
+      name: "Gerador de serviços consumidores de API",
+      description:
+        "Crie rapidamente serviços que consomem APIs externas com configurações personalizadas.",
+      github: "https://github.com/example/api-consumer-generator",
+    },
+    {
+      name: "Template para microserviços",
+      description:
+        "Scaffold para criar microserviços com as melhores práticas e configurações prontas.",
+      github: "https://github.com/example/microservice-template",
+    },
+    {
+      name: "CLI para automação de deploys",
+      description:
+        "Ferramenta de linha de comando para automatizar processos de deploy em múltiplos ambientes.",
+      github: "https://github.com/example/deploy-automation-cli",
+    },
+  ]}
+/>

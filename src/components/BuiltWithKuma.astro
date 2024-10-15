@@ -1,0 +1,34 @@
+---
+// BuiltWithKuma.astro
+
+export interface Project {
+  name: string;
+  description: string;
+  github: string;
+}
+
+export interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+
+
+import { Card, Icon, LinkButton } from "@astrojs/starlight/components";
+---
+
+<section class="py-20">
+  <h2 class="text-3xl font-bold mb-10 text-center">Construído com Kuma</h2>
+    {projects.map((project, index) => (
+      <div class={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
+        <Card title={project.name}>
+             <p>{project.description}</p>
+             <div class="flex end">
+                <LinkButton href="" variant="secondary">
+                    Ver no GitHub<Icon name="github" class="h-6 w-6" />
+                </LinkButton>
+             </div>
+        </Card>
+      </div>
+    ))}
+</section>

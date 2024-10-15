@@ -1,0 +1,21 @@
+---
+export interface CardProps {
+  title: string;
+  description: string;
+}
+
+export interface Props {
+    cards: CardProps[];
+}
+
+import { CardGrid, Card } from "@astrojs/starlight/components";
+
+---
+
+<CardGrid stagger>
+    {Astro.props.cards.map((card) => (
+        <Card title={card.title}>
+            {card.description}
+        </Card>
+    ))}
+</CardGrid>
