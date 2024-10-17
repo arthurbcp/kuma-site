@@ -1,0 +1,81 @@
+---
+title: "Create scaffolds for your projects at lightning speed!"
+description: Create scaffolds for your projects at lightning speed!
+template: splash
+hero:
+  tagline: Framework for creating and sharing project scaffolds for any programming language with an intuitive TUI without needing much effort!
+  image:
+    file: ../../assets/icon.png
+  actions:
+    - text: Get Started!
+      link: /getting-started/installation/
+      icon: right-arrow
+    - text: GitHub
+      link: https://github.com/arthurbcp/kuma
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import BuiltWithKuma from "../../components/BuiltWithKuma.astro";
+import Features from "../../components/Features.astro";
+
+<Features
+  cards={[
+    {
+      title: "Scaffold Builder",
+      description:
+        "Create project scaffolds with a customized TUI for any programming language using only templates.",
+    },
+    {
+      title: "Automate Processes",
+      description:
+        "Create a fully customized TUI interface to automate processes or generate custom code scaffolds through variables.",
+    },
+    {
+      title: "Powerful CLI",
+      description:
+        "Kuma provides a powerful CLI along with a friendly TUI to assist in your daily routine.",
+    },
+    {
+      title: "Share with the Community",
+      description:
+        "Create modules and share with the community through GitHub and use modules created by other developers.",
+    },
+    {
+      title: "AI Code Generation",
+      description:
+        "Use LLM models to define automated code generation processes according to your project's needs.",
+      wip: true,
+    },
+  ]}
+/>
+
+<BuiltWithKuma
+  projects={[
+    {
+      name: "Swagger-Based Code Generator (TypeScript)",
+      description:
+        "Create rapidly fully type-safe services that consume REST APIs through a Swagger/OpenAPI 2.0 file.",
+      github: "https://github.com/arthurbcp/kuma-typescript-rest-services",
+    },
+    {
+      name: "Golang Clean Architecture Scaffolds",
+      description:
+        "Scaffolds to create projects with Clean Architecture for Golang.",
+      github: "",
+    },
+    {
+      name: "Changelog Generator",
+      description:
+        "Create a version history file for your projects based on the Keep a Changelog specifications through a friendly TUI.",
+      github: "https://github.com/arthurbcp/kuma-changelog-generator",
+    },
+    {
+      name: "Commit Standardizer",
+      description:
+        "Write conventional commits for your projects with a friendly TUI.",
+      github: "",
+    },
+  ]}
+/>

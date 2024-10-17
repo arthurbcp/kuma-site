@@ -5,6 +5,7 @@ export interface Project {
   name: string;
   description: string;
   github: string;
+  image: string;
 }
 
 export interface Props {
@@ -22,12 +23,11 @@ import { Card, Icon, LinkButton } from "@astrojs/starlight/components";
     {projects.map((project, index) => (
       <div class={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
         <Card title={project.name}>
-             <p>{project.description}</p>
-             <div class="flex end">
-                <LinkButton href="" variant="secondary">
-                    Ver no GitHub<Icon name="github" class="h-6 w-6" />
-                </LinkButton>
-             </div>
+              <p>{project.description}</p>
+              <img src={project.image} alt={project.name} />
+              <LinkButton href={project.github} target={"_blank"} variant="secondary">
+                  Ver no GitHub<Icon name="github" class="h-6 w-6" />
+              </LinkButton>
         </Card>
       </div>
     ))}

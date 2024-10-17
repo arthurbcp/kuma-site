@@ -2,19 +2,20 @@
 export interface CardProps {
   title: string;
   description: string;
+  wip?: boolean;
 }
 
 export interface Props {
     cards: CardProps[];
 }
 
-import { CardGrid, Card } from "@astrojs/starlight/components";
-
+import { CardGrid, Card, Badge } from "@astrojs/starlight/components";
 ---
 
 <CardGrid stagger>
     {Astro.props.cards.map((card) => (
-        <Card title={card.title}>
+        <Card title="">
+            <h4>{card.title}{card.wip ?<Badge class="ml-8" variant="caution" text="WIP" /> : null}</h4>
             {card.description}
         </Card>
     ))}

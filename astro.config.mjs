@@ -7,7 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "Docs",
+      title: "Kuma",
       logo: {
         light: "./src/assets/icon.png",
         dark: "./src/assets/icon.png",
@@ -15,10 +15,11 @@ export default defineConfig({
       social: {
         github: "https://github.com/withastro/starlight",
       },
-      defaultLocale: "en",
+      defaultLocale: "root",
       locales: {
-        en: {
+        root: {
           label: "English",
+          lang: "en",
         },
         "pt-br": {
           label: "Português",
@@ -26,15 +27,13 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "Guides",
+          label: "Comece por aqui",
           items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
+            { label: "Começando", slug: "getting-started" },
+            { label: "Instalação", slug: "getting-started/installation" },
+            { label: "Primeiros passos", slug: "getting-started/usage" },
+            { label: "Pastas e arquivos", slug: "getting-started/files" },
           ],
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
         },
       ],
       customCss: ["./src/styles/tailwind.css", "./src/styles/custom.css"],
