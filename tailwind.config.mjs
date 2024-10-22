@@ -4,12 +4,6 @@ import starlightPlugin from "@astrojs/starlight-tailwind";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  daisyui: {
-    base: false,
-    styled: false,
-    prefix: "dy-",
-    themes: [],
-  },
   theme: {
     extend: {
       colors: {
@@ -20,5 +14,5 @@ export default {
       },
     },
   },
-  plugins: [starlightPlugin(), require("daisyui")],
+  plugins: [starlightPlugin()],
 };

@@ -1,0 +1,145 @@
+---
+title: Builders
+description: Visão geral de Builders (Kuma Framework)
+---
+import { FileTree } from '@astrojs/starlight/components';
+
+**Builders** são [templates Go](https://pkg.go.dev/text/template) no formato YAML que contém a estrutura de pastas e arquivos a serem criados.
+
+### Estrutura
+Um builder é definido da seguinte forma:
+
+**global**: Variáveis globais que poderão ser utilizadas em todos os templates.
+
+**structure**: Estrutura de pastas e arquivos que serão criados.
+
+`Diretórios:` A estrura é definida em um formato de árvore, onde cada item aninhado da árvore representa um diretório.
+
+`Arquivos:` para que o Kuma identifique um item como um arquivo, é necessário definir uma extensão. Em um arquivo, existem as propriedades:
+- **template:** caminho para o arquivo de template que contém o template base do arquivo que será criado.
+- **data:** mapa dos dados que serão transformados em variáveis para serem utilizadas no template.
+- **includes:** lista de templates que poderão ser utilizados dentro do template base.
+
+
+Exemplo:
+
+```yaml
+# .kuma/base.yaml
+global:
+  packageName: "github.com/arthurbcp/kuma-simple-project"
+structure:
+  src:
+    services:
+      UserService.ts:
+        template: templates/Service.ts
+        data: 
+            name: User
+        includes: 
+              - templates/ImportResolver.ts
+    index.ts
+      template: templates/index.ts            
+```
+
+Resultado:
+<FileTree>
+- src
+  - services
+      - UserService.ts
+  - index.ts
+</FileTree>
+
+
+### Variáveis
+
+Como Builders não são nada além do que [templates Go](https://pkg.go.dev/text/template), é possível montá-los dinamicamente através do uso de variáveis.
+Variáveis dentro de templates Go são definidas entre `{{}}`. E no Kuma, precisam ser prefixadas com `.data` para terem efeito, veja o exemplo:
+```yaml
+# .kuma/base.yaml
+global:
+  packageName: {{.data.packageName}}
+structure:
+  src:
+    services:
+      {{.data.serviceName}}Service.ts:
+        template: templates/Service.ts
+        data: 
+            name: {{.data.serviceName}}
+        includes: 
+              - templates/ImportResolver.ts
+    index.ts
+      template: templates/index.ts            
+```
+
+Variáveis:
+- packageName: `github.com/arthurbcp/kuma-simple-project`
+- serviceName: `User`
+
+Resultado:
+
+<FileTree>
+- src
+  - services
+      - UserService.ts
+  - index.ts
+</FileTree>
+
+
+### Uso avançado
+É possível criar estruturas realmente complexas utilizando builders.
+ No exemplo abaixo, o builder é gerado a partir de um arquivo Swagger.json. E cria a estrutura de pastas de forma dinâmica conforme as definições e tags encontradas no arquivo
+```yaml
+{{$base := .data.apiData}}
+structure:
+      src:
+        dto:
+          index.ts:
+            template: templates/DTOExporter.gtpl
+            data: 
+              {{range $name, $prop := $base.definitions }}{{ if eq $prop.type "object" }}
+                - {{ $name }}
+              {{end}}{{end}}
+              
+          {{range $name, $prop := $base.definitions }}{{ if eq $prop.type "object" }}{{ toSnakeCase $name }}.ts:
+            template: templates/DTO.gtpl
+            includes:
+              - templates/TypeResolver.gtpl
+            data:
+              name: {{ $name }}
+              {{ range toYaml . }}{{ . }}
+              {{end}}
+          {{end}}{{end}}
+        services:
+          builder.ts:
+            template: templates/ServiceBuilder.gtpl
+            data:
+              {{range $base.tags}}
+              - {{.name}} 
+              {{end}}
+          index.ts:
+            template: templates/ServiceExporter.gtpl
+            data:
+              {{range $base.tags}}
+              - {{.name}}
+              {{end}}
+
+          {{range $base.tags}}{{toSnakeCase .name}}:
+            {{$tag := .}}
+            service.ts:
+              template: templates/Service.gtpl
+              includes:
+                - templates/TypeResolver.gtpl
+                - templates/ResponseTypeResolver.gtpl
+              data:
+                name: {{$tag.name}}
+                description:  {{$tag.description}}
+                operations:
+                {{range $path, $req := getPathsByTag $base.paths $tag.name}}
+                  {{$path}}: 
+                      {{range toYaml $req}}{{.}}
+                      {{end}}
+                {{end}}
+          {{end}}
+
+```
+Para saber mais sobre text templates e como utilizá-los junto ao Kuma, acesse o link: [Text Templates no Go](/complements/go-templates)
+

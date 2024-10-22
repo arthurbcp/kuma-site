@@ -1,6 +1,13 @@
 ---
-title: Getting Started
-description: Getting Started with Kuma Framework.
+title: Sobre o Kuma
+description: Guia inicial do Kuma Framework
 ---
 
-Kuma is a powerful framework designed to generate scaffolds for any programming language, based on [Go templates](https://pkg.go.dev/text/template). It streamlines the process of setting up new projects by automating the creation of directories, files, and base code, ensuring consistency and saving valuable development time. Additionally, Kuma features a customizable TUI, providing an intuitive and efficient experience both for those creating scaffolds and those using them, making the process accessible and seamless for developers of all levels.
+Kuma é um framework poderoso projetado para gerar scaffolds para qualquer linguagem de programação, baseado em [templates Go](https://pkg.go.dev/text/template). Ele simplifica o processo de configuração de novos projetos automatizando a criação de diretórios, arquivos e código base, garantindo consistência e economizando tempo valioso de desenvolvimento. Além disso, o Kuma possui uma TUI personalizável, proporcionando uma experiência intuitiva e eficiente tanto para quem cria scaffolds quanto para quem os utiliza, tornando o processo acessível e fluido para desenvolvedores de todos os níveis.
+
+## Recursos
+
+- Personalize a estrutura de diretórios e arquivos do seu projeto através de [templates Go](https://pkg.go.dev/text/template).
+- Integração com o GitHub para baixar templates pré-definidos da comunidade ou para uso pessoal via repositórios privados.
+- Capacidade de criar fluxos de trabalho de comandos personalizados CLI/TUI através de um arquivo YAML usando runs.
+- Uso de variáveis dinâmicas aplicáveis aos templates. As variáveis podem ser extraídas de um arquivo YAML ou JSON local ou buscadas de uma URL pública. Elas também podem ser obtidas a partir da entrada do usuário durante a execução de um [run](cmd/commands/exec).

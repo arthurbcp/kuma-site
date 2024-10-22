@@ -1,0 +1,55 @@
+---
+title: Primeiros passos
+description: Dê seus primeiros passos com o Kuma Framework
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+
+- Inicie um repositório git vazio
+
+```bash
+mkdir kuma-hello-world && cd kuma-hello-world && git init
+```
+
+- Adicione seu primeiro módulo com o Kuma CLI
+
+```bash
+kuma module add --repository arthurbcp/kuma-hello-world
+```
+
+- Siga os passos em seu terminal até que seja exibida a mensagem de "Hello World!"
+
+![hello](https://github.com/user-attachments/assets/bf9c603f-1f58-4cde-ae9a-935bc6857f2f)
+
+
+
+Se você seguiu corretamente os [Primeiros Passos](/pt-br/getting-started/usage), você deverá ter o seguinte diretório:
+<FileTree>
+- .kuma
+    - kuma-hello-world
+        - runs
+            - hello-world-runs.yaml 
+        - templates
+           -  Main.go
+        - base.yaml
+    - kuma-modules.yaml
+- go.mod
+- main.go
+- .gitmodules
+</FileTree>
+
+Todos os arquivos do kuma ficam dentro da pasta `.kuma`. Dentro dessa pasta, a separação é feita por módulos,
+o módulo `kuma-hello-world` é o primeiro módulo que você adicionou ao seu projeto.
+Dentro do módulo, você encontrará os seguintes diretórios:
+
+- `runs`: esse diretório contém os arquivos de configuração de runs, que são arquivos YAML que definem o processo anterior a aplicação dos templates para gerar o código.
+- `templates`: esse diretório contém os arquivos de template que serão usados para gerar o código.
+
+O arquivo `base.yaml` é arquivo responsável por definir a estrutura de diretórios e arquivos que serão criados em seu projeto.
+
+O arquivo `kuma-modules.yaml` é o arquivo de configuração do Kuma, ele contém informações sobre os módulos que você adicionou ao seu projeto e é modificado automaticamente sempre que um módulo for adicionado ou removido.
+
+Cada módulo no Kuma, é também um submódulo do git. Por conta disso, um arquivo `.gitmodules` foi criado na raiz de seu projeto.
+
+Os arquivos `go.mod` e `main.go` foram gerados através da execução da `run` **initial**
