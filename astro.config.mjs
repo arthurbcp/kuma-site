@@ -35,6 +35,20 @@ export default defineConfig({
           ]
         },
         {
+          label: "Run handlers",
+          items: [
+            {label: "Form Handler", slug: "run-handlers/form"},
+            {label: "Cmd Handler", slug: "run-handlers/cmd"},
+            {label: "Define Handler", slug: "run-handlers/define"},
+            {label: "Log Handler", slug: "run-handlers/log"},
+            {label: "Load Handler", slug: "run-handlers/load"},
+            {label: "Create Handler", slug: "run-handlers/create"},
+            {label: "Modify Handler", slug: "run-handlers/modify"},
+            {label: "Run Handler", slug: "run-handlers/run"},
+            {label: "When Handler", slug: "run-handlers/when"},
+          ]
+        },
+        {
           label:"Comandos CLI",
           items: [
             { label: "create", slug: ""},

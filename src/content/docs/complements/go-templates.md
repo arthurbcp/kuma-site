@@ -16,11 +16,6 @@ Name: {{.data.Name}}
 Age: {{.data.Age}}
 ```
 
-Neste exemplo, `{{.data}}` refere-se aos dados passados para o template.
-
-
-Aqui, `.data.Name` e `.data.Age` acessam os campos `Name` e `Age` dos dados fornecidos ao template.
-
 ## Estruturas de Controle
 
 ### Condicionais (`if`)
@@ -37,11 +32,9 @@ User is not active.
 {{end}}
 ```
 
-Neste exemplo, se `.data.Active` for verdadeiro, o primeiro bloco é executado; caso contrário, o bloco dentro de `{{else}}` é executado.
-
 ### Iteração (`range`)
 
-A diretiva `range` permite iterar sobre slices, arrays, mapas e canais.
+A diretiva `range` permite iterar sobre slices e mapas.
 
 #### Iterando sobre Slices
 
@@ -53,8 +46,6 @@ List of Fruits:
 - {{.}}
 {{end}}
 ```
-
-Aqui, `.data.Fruits` é um slice, e `{{range}}` irá iterar sobre cada elemento, referenciado por `{{.}}`.
 
 #### Iterando sobre Mapas
 
@@ -69,8 +60,6 @@ ${$name}: ${$score} points
 {{end}}
 ```
 
-Neste caso, `$name` e `$score` são variáveis que armazenam a chave e o valor de cada entrada no mapa `.data.Players`.
-
 ## Funções nos Templates
 
 ### Funções Predefinidas
@@ -84,8 +73,6 @@ The total number of items is {{len .data.Items}}
 ```
 
 ### Funções Personalizadas
-
-Você pode definir suas próprias funções e registrá-las no template.
 
 No Kuma, você terá acesso a todas as funções do pacote [go-sproute](https://github.com/go-sprout/sprout) e também uma série de funções customizadas específicas para o Kuma. Acesse o [Guia sobre funções]() para saber mais a respeito.
 
@@ -113,8 +100,6 @@ Content: {{.data.Content}}
 {{template "body" .}}
 ```
 
-Neste exemplo, definimos dois templates, `"header"` e `"body"`, e os utilizamos com `{{template}}`.
-
 ### Blocos
 
 Blocos permitem que você defina áreas que podem ser sobrescritas por outros templates.
@@ -133,8 +118,6 @@ Content:
 {{template "base" .}}
 ```
 
-No exemplo acima, o template `base` define blocos para `title` e `content`, que podem ser sobrescritos no `childTemplate`.
-
 ## Exemplo Completo
 
 Aqui está um exemplo que combina vários recursos dos templates em Go:
@@ -148,7 +131,5 @@ Product List:
 
 Total products: {{len .data.Products}}
 ```
-
-Onde `.data.Products` é um slice de produtos com os campos `Name` e `Price`.
 
 Acesse a documentação oficial aqui: [Go text templates](https://pkg.go.dev/text/template)

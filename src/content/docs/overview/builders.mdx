@@ -6,7 +6,7 @@ import { FileTree } from '@astrojs/starlight/components';
 
 **Builders** são [templates Go](https://pkg.go.dev/text/template) no formato YAML que contém a estrutura de pastas e arquivos a serem criados.
 
-### Estrutura
+## Estrutura
 Um builder é definido da seguinte forma:
 
 **global**: Variáveis globais que poderão ser utilizadas em todos os templates.
@@ -16,7 +16,7 @@ Um builder é definido da seguinte forma:
 `Diretórios:` A estrura é definida em um formato de árvore, onde cada item aninhado da árvore representa um diretório.
 
 `Arquivos:` para que o Kuma identifique um item como um arquivo, é necessário definir uma extensão. Em um arquivo, existem as propriedades:
-- **template:** caminho para o arquivo de template que contém o template base do arquivo que será criado.
+- **template:** caminho para o arquivo que contém o template base do arquivo que será criado.
 - **data:** mapa dos dados que serão transformados em variáveis para serem utilizadas no template.
 - **includes:** lista de templates que poderão ser utilizados dentro do template base.
 
@@ -49,7 +49,7 @@ Resultado:
 </FileTree>
 
 
-### Variáveis
+## Variáveis
 
 Como Builders não são nada além do que [templates Go](https://pkg.go.dev/text/template), é possível montá-los dinamicamente através do uso de variáveis.
 Variáveis dentro de templates Go são definidas entre `{{}}`. E no Kuma, precisam ser prefixadas com `.data` para terem efeito, veja o exemplo:
@@ -84,7 +84,7 @@ Resultado:
 </FileTree>
 
 
-### Uso avançado
+## Uso avançado
 É possível criar estruturas realmente complexas utilizando builders.
  No exemplo abaixo, o builder é gerado a partir de um arquivo Swagger.json. E cria a estrutura de pastas de forma dinâmica conforme as definições e tags encontradas no arquivo
 ```yaml
