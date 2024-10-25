@@ -23,7 +23,7 @@ Uma run é composta pela seguinte estrutura:
 - [Cmd](/run-handlers/cmd): Executa comandos no terminal durante a run.
 - [Define](/run-handlers/define): Define variáveis que podem ser utilizadas em etapas posteriores da run, builders ou templates.
 - [Log](/run-handlers/log): Permite exibir mensagens no terminal durante a execução da run.
-- [Load](/run-handlers/load): Carrega dados de um arquivo local ou remoto e os armazena em uma variável.
+- [Load](/run-handlers/load): Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
 - [Create](/run-handlers/create): Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
 - [Modify](/run-handlers/modify): Altera arquivos existentes com base em templates, permitindo inserir, substituir ou remover conteúdo.
 - [Run](/run-handlers/run): Executa outra run dentro da atual.

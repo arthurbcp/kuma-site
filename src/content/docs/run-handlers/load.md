@@ -3,7 +3,7 @@ title: Load Handler
 description: Visão geral de Load Handler (Kuma Framework)
 ---
 
-Carrega dados de um arquivo local ou remoto e os armazena em uma variável.
+Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
 
 **Propriedades**:
 - **from**: Caminho do arquivo a ser carregado. Pode ser um arquivo local ou remoto.

@@ -13,7 +13,7 @@ export default defineConfig({
         dark: "./src/assets/icon.png",
       },
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/arthurbcp/kuma",
       },
       sidebar: [
         {

@@ -16,22 +16,24 @@ description: Visão geral de Form Handler (Kuma Framework)
 
 - **fields**: Lista de campos de entrada que serão exibidos no formulário. O `fields` pode conter diferentes tipos de campos.
 
-  ## Tipos de Campos
+## Tipos de Campos
 
-  ### Input
-  Um campo de entrada de texto onde o usuário pode digitar informações.
+---
 
-  - **label**: O rótulo exibido próximo ao campo de texto, informando ao usuário o que deve ser digitado.
-  - **placeholder**: Um valor exibido dentro do campo como exemplo ou sugestão, até que o usuário digite algo.
-  - **out**: O nome da variável onde o valor digitado pelo usuário será armazenado.
+### Input
+Um campo de entrada de texto onde o usuário pode digitar informações.
 
-  **Exemplo**:
-  ```yaml
-  - input:
-      label: "Nome do Serviço"
-      placeholder: "Digite o nome do serviço"
-      out: "serviceName"
-  ```
+- **label**: O rótulo exibido próximo ao campo de texto, informando ao usuário o que deve ser digitado.
+- **placeholder**: Um valor exibido dentro do campo como exemplo ou sugestão, até que o usuário digite algo.
+- **out**: O nome da variável onde o valor digitado pelo usuário será armazenado.
+
+**Exemplo**:
+```yaml
+- input:
+    label: "Nome do Serviço"
+    placeholder: "Digite o nome do serviço"
+    out: "serviceName"
+```
 
 ---
 
@@ -98,7 +100,7 @@ description: Visão geral de Form Handler (Kuma Framework)
           value: "k8s"
       limit: 2
   ```
-  
+
 ---
 
   ### Confirm
