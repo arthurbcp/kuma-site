@@ -21,7 +21,7 @@ Uma run é composta pela seguinte estrutura:
 
 - [Form](/run-handlers/form): É usado para exibir formulários interativos no terminal.
 - [Cmd](/run-handlers/cmd): Executa comandos no terminal durante a run.
-- [Define](/run-handlers/define): Define variáveis que podem ser utilizadas em etapas posteriores da run, builders ou templates.
+- [Define](/run-handlers/define): Define novas variáveis durante a execução da run.
 - [Log](/run-handlers/log): Permite exibir mensagens no terminal durante a execução da run.
 - [Load](/run-handlers/load): Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
 - [Create](/run-handlers/create): Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
@@ -128,3 +128,7 @@ create-unreleased-file:
             template: templates/unreleased.gtpl
 
 ```
+
+## Executando uma run
+
+Confira a documentação completa do comando `kuma exec run` [aqui](/commands-cli/exec-run)

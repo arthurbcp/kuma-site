@@ -25,7 +25,7 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 
 - **label**: O rótulo exibido próximo ao campo de texto, informando ao usuário o que deve ser digitado.
 - **placeholder**: Um valor exibido dentro do campo como exemplo ou sugestão, até que o usuário digite algo.
-- **out**: O nome da variável onde o valor digitado pelo usuário será armazenado.
+- **out**: O nome da variável onde o valor digitado pelo usuário será armazenado. **Required**
 
 **Exemplo**:
 ```yaml
@@ -44,7 +44,7 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
   - **label**: O rótulo que descreve o campo de texto.
   - **description**: Uma descrição adicional para orientar o usuário.
   - **placeholder**: Um valor exemplo ou sugestão exibido no campo até que o usuário insira o texto.
-  - **out**: O nome da variável que armazenará o texto inserido pelo usuário.
+  - **out**: O nome da variável que armazenará o texto inserido pelo usuário. **Required**
 
   **Exemplo**:
   ```yaml
@@ -61,8 +61,8 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 
   - **label**: O rótulo que descreve o campo de seleção.
   - **description**: Uma breve descrição que explica o que o campo representa.
-  - **out**: O nome da variável que armazenará o valor selecionado pelo usuário.
-  - **options**: Lista de opções que o usuário pode escolher. Cada opção tem uma `label` (exibido para o usuário) e um `value` (armazenado na variável).
+  - **out**: O nome da variável que armazenará o valor selecionado pelo usuário. **Required**
+  - **options**: Lista de opções que o usuário pode escolher. Cada opção tem uma `label` (exibido para o usuário) e um `value` (armazenado na variável). **Required**
 
   **Exemplo**:
   ```yaml
@@ -84,8 +84,8 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 
   - **label**: O rótulo que descreve o campo de múltipla seleção.
   - **description**: Uma breve descrição que ajuda o usuário a entender o propósito do campo.
-  - **out**: O nome da variável onde as opções selecionadas serão armazenadas.
-  - **options**: Lista de opções disponíveis para seleção múltipla.
+  - **out**: O nome da variável onde as opções selecionadas serão armazenadas. **Required**
+  - **options**: Lista de opções disponíveis para seleção múltipla. **Required**
   - **limit**: Número máximo de opções que o usuário pode selecionar.
 
   **Exemplo**:
@@ -108,9 +108,9 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 
   - **label**: O rótulo que descreve o campo de confirmação.
   - **description**: Uma breve descrição que explica o que o usuário deve confirmar.
-  - **affirmative**: O texto que representa a resposta afirmativa.
-  - **negative**: O texto que representa a resposta negativa.
-  - **out**: O nome da variável que armazenará a resposta (`true` ou `false`).
+  - **affirmative**: O texto que representa a resposta afirmativa. **Required**
+  - **negative**: O texto que representa a resposta negativa. **Required**
+  - **out**: O nome da variável que armazenará a resposta no formato booleano.
 
   **Exemplo**:
   ```yaml

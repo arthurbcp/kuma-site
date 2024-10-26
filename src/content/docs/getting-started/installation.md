@@ -13,7 +13,7 @@ description: Guia de instalação do Kuma Framework
 1. **Execute o comando de instalação:**
 
    ```bash
-   go install github.com/arthurbcp/kuma@latest
+   go install github.com/arthurbcp/kuma/v2@latest
    ```
 
 2. **Adicione o diretório bin do Go ao seu PATH (se ainda não estiver incluído):**

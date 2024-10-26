@@ -8,5 +8,5 @@ Permite exibir mensagens no terminal durante a execução da run.
 
 **Exemplo**:
 ```yaml
-- log: "Serviço {{.data.serviceName}} criado com sucesso utilizando."
+- log: "Serviço {{.data.serviceName}} criado com sucesso."
 ```

@@ -8,14 +8,14 @@ O Kuma importa todas as funções disponíveis no pacote [go-sproute](https://gi
 
 ## Funções de Parser
 
-### ToYaml
+### toYaml
 
-ToYaml converte uma estrutura de dados Go em um slice de strings formatado em YAML, onde cada elemento representa uma linha do YAML resultante. Esta função é útil para renderizar dados em um formato legível para os templates.
+Converte uma estrutura de dados Go em um slice de strings formatado em YAML, onde cada elemento representa uma linha do YAML resultante. Esta função é útil para renderizar dados em um formato legível para os templates.
 
 **Assinatura:**
 
 ```go
-func ToYaml(data interface{}) []string
+func toYaml(data interface{}) []string
 ```
 
 **Parâmetros:**
@@ -50,14 +50,14 @@ data:
 
 ## Funções de Agrupamento
 
-### GroupByKey
+### groupByKey
 
-GroupByKey organiza um slice de mapas com base em uma chave especificada. Ele retorna um mapa onde as chaves são valores únicos encontrados na chave especificada nos itens de entrada, e os valores são slices de itens que compartilham esse valor de chave.
+Organiza um slice de mapas com base em uma chave especificada. Ele retorna um mapa onde as chaves são valores únicos encontrados na chave especificada nos itens de entrada, e os valores são slices de itens que compartilham esse valor de chave.
 
 **Assinatura:**
 
 ```go
-func GroupByKey(data []interface{}, key string) map[string]interface{
+func groupByKey(data []interface{}, key string) map[string]interface{
 ```
 
 **Parâmetros:**
@@ -98,14 +98,14 @@ Um mapa onde cada chave representa um valor único da chave especificada no slic
 
 ## Funções OpenAPI
 
-### GetRefFrom
+### getRefFrom
 
-GetRefFrom extrai o identificador de referência de um objeto OpenAPI 2.0 se existir. A função espera que a referência esteja no formato de um ponteiro JSON dentro da especificação OpenAPI.
+Extrai o identificador de referência de um objeto OpenAPI 2.0 se existir. A função espera que a referência esteja no formato de um ponteiro JSON dentro da especificação OpenAPI.
 
 **Assinatura:**
 
 ```go
-func GetRefFrom(object map[string]interface{}) string
+func getRefFrom(object map[string]interface{}) string
 ```
 
 **Parâmetros:**
@@ -132,14 +132,14 @@ Uma string contendo o identificador de referência ou uma string vazia se nenhum
 
 ---
 
-### GetPathsByTag
+### getPathsByTag
 
-GetPathsByTag filtra caminhos OpenAPI por uma tag especificada. Ele retorna um subconjunto de caminhos que estão associados com a tag fornecida, útil para gerar documentação para seções específicas de uma API.
+Filtra caminhos OpenAPI por uma tag especificada. Ele retorna um subconjunto de caminhos que estão associados com a tag fornecida, útil para gerar documentação para seções específicas de uma API.
 
 **Assinatura:**
 
 ```go
-func GetPathsByTag(paths map[string]interface{},
+func getPathsByTag(paths map[string]interface{},
 tag string) map[string]interface{}
 ```
 
@@ -207,14 +207,14 @@ Um mapa contendo os caminhos que incluem a tag especificada.
 
 ---
 
-### GetParamsByType
+### getParamsByType
 
-GetParamsByType filtra parâmetros com base no tipo do campo `in` (por exemplo, query, header, path, formData). Esta função ajuda a extrair parâmetros de um determinado tipo de uma operação OpenAPI.
+Filtra parâmetros com base no tipo do campo `in` (por exemplo, query, header, path, formData). Esta função ajuda a extrair parâmetros de um determinado tipo de uma operação OpenAPI.
 
 **Assinatura:**
 
 ```go
-func GetParamsByType(params []interface{},
+func getParamsByType(params []interface{},
 paramType string) []interface{}
 ```
 
@@ -263,14 +263,14 @@ Um slice de parâmetros que correspondem ao tipo especificado.
 
 ## Funções de Arquivos
 
-### GetFileContent
+### getFileContent
 
-A função `GetFileContent` lê e retorna o conteúdo de um arquivo fornecido como uma string. Ela é útil para inserir o conteúdo de arquivos dentro de templates Go.
+Lê e retorna o conteúdo de um arquivo fornecido como uma string. Ela é útil para inserir o conteúdo de arquivos dentro de templates Go.
 
 **Assinatura:**
 
 ```go
-func GetFileContent(filePath string) string
+func getFileContent(filePath string) string
 ```
 
 **Parâmetros:**
@@ -285,20 +285,20 @@ func GetFileContent(filePath string) string
 **Exemplo**
 
 ```go
-{{ $content := GetFileContent "/path/to/file.txt" }}
+{{ $content := getFileContent "/path/to/file.txt" }}
 {{ $content }}
 ```
 
 ---
 
-### GetFilesList
+### getFilesList
 
-A função `GetFilesList` retorna uma lista de nomes de arquivos em um diretório. Pode ser usada para listar arquivos em um diretório dentro de um template Go.
+Retorna uma lista de nomes de arquivos em um diretório. Pode ser usada para listar arquivos em um diretório dentro de um template Go.
 
 **Assinatura:**
 
 ```go
-func GetFilesList(path string) []string
+func getFilesList(path string) []string
 ```
 
 **Parâmetros:**
@@ -313,20 +313,20 @@ func GetFilesList(path string) []string
 **Exemplo**
 
 ```go
-{{ $files := GetFilesList "/path/to/directory" }}
+{{ $files := getFilesList "/path/to/directory" }}
 {{ range $files }}{{ . }}{{ end }}
 ```
 
 ---
 
-### GetFileExtension
+### getFileExtension
 
-A função `GetFileExtension` retorna a extensão de um arquivo a partir do seu caminho. Útil para condicionar a lógica de templates com base no tipo de arquivo.
+Retorna a extensão de um arquivo a partir do seu caminho. Útil para condicionar a lógica de templates com base no tipo de arquivo.
 
 **Assinatura:**
 
 ```go
-func GetFileExtension(filePath string) string
+func getFileExtension(filePath string) string
 ```
 
 **Parâmetros:**
@@ -341,20 +341,20 @@ func GetFileExtension(filePath string) string
 **Exemplo**
 
 ```go
-{{ $ext := GetFileExtension "/path/to/file.txt" }}
+{{ $ext := getFileExtension "/path/to/file.txt" }}
 {{ if eq $ext "txt" }}Este é um arquivo de texto.{{ end }}
 ```
 
 ---
 
-### GetFileName
+### getFileName
 
-A função `GetFileName` retorna o nome do arquivo, sem o caminho. Pode ser usada para exibir apenas o nome do arquivo em templates.
+Retorna o nome do arquivo, sem o caminho. Pode ser usada para exibir apenas o nome do arquivo em templates.
 
 **Assinatura:**
 
 ```go
-func GetFileName(filePath string) string
+func getFileName(filePath string) string
 ```
 
 **Parâmetros:**
@@ -368,20 +368,20 @@ func GetFileName(filePath string) string
 **Exemplo**
 
 ```go
-{{ $fileName := GetFileName "/path/to/file.txt" }}
+{{ $fileName := getFileName "/path/to/file.txt" }}
 {{ $fileName }}
 ```
 
 ---
 
-### GetFilePath
+### getFilePath
 
-A função `GetFilePath` retorna o diretório onde o arquivo está localizado. Pode ser usada para acessar o caminho do diretório dentro de um template Go.
+Retorna o diretório onde o arquivo está localizado. Pode ser usada para acessar o caminho do diretório dentro de um template Go.
 
 **Assinatura:**
 
 ```go
-func GetFilePath(filePath string) string
+func getFilePath(filePath string) string
 ```
 
 **Parâmetros:**
@@ -395,20 +395,20 @@ func GetFilePath(filePath string) string
 **Exemplo**
 
 ```go
-{{ $dir := GetFilePath "/path/to/file.txt" }}
+{{ $dir := getFilePath "/path/to/file.txt" }}
 {{ $dir }}
 ```
 
 ---
 
-### FileExists
+### fileExists
 
-A função `FileExists` verifica se um arquivo existe no sistema de arquivos. Ela é útil para verificar a existência de arquivos antes de utilizá-los em templates Go.
+Verifica se um arquivo existe no sistema de arquivos. Ela é útil para verificar a existência de arquivos antes de utilizá-los em templates Go.
 
 **Assinatura:**
 
 ```go
-func FileExists(filePath string) bool
+func fileExists(filePath string) bool
 ```
 
 **Parâmetros:**
@@ -422,19 +422,19 @@ func FileExists(filePath string) bool
 **Exemplo**
 
 ```go
-{{ if FileExists "/path/to/file.txt" }}O arquivo existe.{{ else }}O arquivo não existe.{{ end }}
+{{ if fileExists "/path/to/file.txt" }}O arquivo existe.{{ else }}O arquivo não existe.{{ end }}
 ```
 
 ---
 
-### IsDirectory
+### isDirectory
 
-A função `IsDirectory` verifica se um caminho é um diretório. Pode ser usada para diferenciar diretórios de arquivos em um template Go.
+Verifica se um caminho é um diretório. Pode ser usada para diferenciar diretórios de arquivos em um template Go.
 
 **Assinatura:**
 
 ```go
-func IsDirectory(filePath string) bool
+func isDirectory(filePath string) bool
 ```
 
 **Parâmetros:**
@@ -448,19 +448,19 @@ func IsDirectory(filePath string) bool
 **Exemplo**
 
 ```go
-{{ if IsDirectory "/path/to/directory" }}Isso é um diretório.{{ else }}Isso é um arquivo.{{ end }}
+{{ if isDirectory "/path/to/directory" }}Isso é um diretório.{{ else }}Isso é um arquivo.{{ end }}
 ```
 
 ---
 
-### IsFile
+### isFile
 
-A função `IsFile` verifica se um caminho é um arquivo. Pode ser usada para diferenciar arquivos de diretórios em um template Go.
+Verifica se um caminho é um arquivo. Pode ser usada para diferenciar arquivos de diretórios em um template Go.
 
 **Assinatura:**
 
 ```go
-func IsFile(filePath string) bool
+func isFile(filePath string) bool
 ```
 
 **Parâmetros:**
@@ -474,19 +474,19 @@ func IsFile(filePath string) bool
 **Exemplo**
 
 ```go
-{{ if IsFile "/path/to/file.txt" }}Isso é um arquivo.{{ else }}Isso não é um arquivo.{{ end }}
+{{ if isFile "/path/to/file.txt" }}Isso é um arquivo.{{ else }}Isso não é um arquivo.{{ end }}
 ```
 
 ---
 
-### GetFileSize
+### getFileSize
 
-A função `GetFileSize` retorna o tamanho de um arquivo em bytes.
+Retorna o tamanho de um arquivo em bytes.
 
 **Assinatura:**
 
 ```go
-func GetFileSize(filePath string) int64
+func getFileSize(filePath string) int64
 ```
 
 **Parâmetros:**
@@ -501,7 +501,7 @@ func GetFileSize(filePath string) int64
 **Exemplo**
 
 ```go
-{{ $size := GetFileSize "/path/to/file.txt" }}
+{{ $size := getFileSize "/path/to/file.txt" }}
 {{ $size }} bytes
 ```
 

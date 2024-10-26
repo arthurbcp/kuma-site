@@ -51,12 +51,12 @@ export default defineConfig({
         {
           label:"Comandos CLI",
           items: [
-            { label: "create", slug: ""},
-            { label: "exec run", slug: ""},
-            { label: "exec module", slug: ""},
-            { label: "module add", slug: ""},
-            { label: "module rm", slug: ""},
-            { label: "modify", slug: ""},
+            { label: "create", slug: "commands-cli/create"},
+            { label: "exec run", slug: "commands-cli/exec-run"},
+            { label: "exec module", slug: "commands-cli/exec-module"},
+            { label: "module add", slug: "commands-cli/module-add"},
+            { label: "module rm", slug: "commands-cli/module-rm"},
+            { label: "modify", slug: "commands-cli/modify"},
           ]
         },
         {
