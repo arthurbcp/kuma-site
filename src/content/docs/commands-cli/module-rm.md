@@ -11,7 +11,6 @@ kuma module rm [flags]
 
 ## Flags
 - `--module, -m`: O nome do módulo que será removido.
-- `--rm-git-submodule`: Remove o módulo do git submodule. **Default**: `false`
 
 ## Exemplo
 

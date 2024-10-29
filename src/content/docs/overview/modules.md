@@ -22,9 +22,7 @@ version: 1.0.0 # Versão do módulo
 Para adicionar um módulo do Kuma ao seu projeto, execute o comando `kuma module add -repository myorgazitaion/myrepository`.
 Ou se preferir, você pode digitar apenas `kuma module add`, e escolher um dos nossos módulos oficiais.
 
-Ao adicionar um módulo ao seu projeto, o Kuma clonará o repositório do módulo como um submódulo git para dentro da pasta `.kuma`. Para gerenciar os módulos, o Kuma também criará um arquivo chamado `kuma-modules.yaml`, que será editado automaticamente sempre que um módulo for adicionado ou removido do seu projeto.
-
-O git também criará um arquivo `.gitmodules` na raiz de seu projeto que será usado para gerencia dos submódulos.
+Ao adicionar um módulo ao seu projeto, o Kuma copiará o repositório do módulo  para dentro da pasta `.kuma`. Para gerenciar os módulos, o Kuma também criará um arquivo chamado `kuma-modules.yaml`, que será editado automaticamente sempre que um módulo for adicionado ou removido do seu projeto.
 
 Confira a documentação completa do comando `kuma module add` [aqui](/commands-cli/module-add).
 
