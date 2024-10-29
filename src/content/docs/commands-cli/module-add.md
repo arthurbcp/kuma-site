@@ -15,7 +15,7 @@ kuma module add [flags]
 ## Exemplo
 
 ```bash
-kuma module add --repository arthurbcp/kuma-hello-world
+kuma module add --repository kuma-framework/kuma-hello-world
 ```
 
 ## TUI

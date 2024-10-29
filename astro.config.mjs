@@ -13,7 +13,7 @@ export default defineConfig({
         dark: "./src/assets/icon.png",
       },
       social: {
-        github: "https://github.com/arthurbcp/kuma",
+        github: "https://github.com/kuma-framework/kuma",
       },
       sidebar: [
         {
