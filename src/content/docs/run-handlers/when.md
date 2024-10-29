@@ -1,15 +1,15 @@
 ---
 title: When Handler
-description: Visão geral de When Handler (Kuma Framework)
+description: Overview of When Handler (Kuma Framework)
 ---
 
-Executa condicionalmente uma run.
+Executes a run conditionally.
 
-**Propriedades**:
-- **condition**: A condição que deve ser avaliada como verdadeira para executar a run.
-- **run**: O nome da run que será executada se a condição for atendida.
+**Properties**:
+- **condition**: The condition that must evaluate to true for the run to execute.
+- **run**: The name of the run that will be executed if the condition is met.
 
-**Exemplo**:
+**Example**:
 ```yaml
 - when:
       condition: "{{ if .data.createBasicStructure }}"

@@ -1,42 +1,42 @@
 ---
 title: Runs
-description: Visão geral de Runs (Kuma Framework)
+description: Overview of Runs (Kuma Framework)
 ---
 
-Runs são pipelines de ações configuráveis que permitem definir um processo de execução em etapas a partir de um comando de CLI. Com uma run, você pode criar desde um formulário com interação com o usuário via terminal, realizar chamadas HTTP, transformar arquivos JSON ou YAML em variáveis para uso em templates, gerar estruturas de código personalizadas, adicionar logs e executar outras runs de maneira condicional.
+Runs are configurable action pipelines that allow you to define a step-by-step execution process from a CLI command. With a run, you can create anything from a form with user interaction via terminal, make HTTP calls, transform JSON or YAML files into variables for use in templates, generate custom code structures, add logs, and conditionally execute other runs.
 
-## Estrutura
+## Structure
 
-Runs são arquivos YAML e devem estar dentro da pasta `.kuma/runs` para serem identificadas.
+Runs are YAML files and must be located within the `.kuma/runs` folder to be recognized.
 
-O arquivo deve estar em formato de mapa, onde a chave representa a declaração de uma run.
+The file must be in map format, where the key represents the declaration of a run.
 
-Uma run é composta pela seguinte estrutura:
+A run is composed of the following structure:
 
-- **description:** Descrição da ação que será realizada pela run.
-- **steps:** Array de passos (handlers) que serão executados em ordem ao chamar uma run.
-- **visible:** Valor booleano para determinar se a run será visível para execução via terminal (`true`) ou apenas para outras runs (`false`). Valor padrão: `true`.
+- **description:** Description of the action to be performed by the run.
+- **steps:** Array of steps (handlers) that will be executed in order when calling a run.
+- **visible:** Boolean value that determines if the run will be visible for execution via terminal (`true`) or only for other runs (`false`). Default value: `true`.
 
 ## Handlers
 
-- [Form](/run-handlers/form): É usado para exibir formulários interativos no terminal.
-- [Cmd](/run-handlers/cmd): Executa comandos no terminal durante a run.
-- [Define](/run-handlers/define): Define novas variáveis durante a execução da run.
-- [Log](/run-handlers/log): Permite exibir mensagens no terminal durante a execução da run.
-- [Load](/run-handlers/load): Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
-- [Create](/run-handlers/create): Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
-- [Modify](/run-handlers/modify): Altera arquivos existentes com base em templates, permitindo inserir, substituir ou remover conteúdo.
-- [Run](/run-handlers/run): Executa outra run dentro da atual.
-- [When](/run-handlers/when): Executa condicionalmente uma run.
+- [Form](/run-handlers/form): Used to display interactive forms in the terminal.
+- [Cmd](/run-handlers/cmd): Executes commands in the terminal during the run.
+- [Define](/run-handlers/define): Defines new variables during the run execution.
+- [Log](/run-handlers/log): Allows displaying messages in the terminal during the run execution.
+- [Load](/run-handlers/load): Loads data from a local or remote file (JSON or YAML) and stores it in a variable.
+- [Create](/run-handlers/create): Generates new files or directories from templates based on a predefined structure.
+- [Modify](/run-handlers/modify): Alters existing files based on templates, allowing for content insertion, replacement, or removal.
+- [Run](/run-handlers/run): Executes another run within the current one.
+- [When](/run-handlers/when): Conditionally executes a run.
 
-## Uso de variáveis
+## Using Variables
 
-Os valores de cada propriedade de cada handler são templates strings de Go, podendo conter variáveis, funções e expressões assim como qualquer outro template. Utilização: `.data.nomeVariavel`.
+The values of each property of each handler are Go template strings, which may contain variables, functions, and expressions just like any other template. Usage: `.data.variableName`.
 
-Para saber mais sobre text templates e como utilizá-los junto ao Kuma, acesse o link: [Text Templates no Go](/complements/go-templates)
+To learn more about text templates and how to use them with Kuma, visit the link: [Text Templates in Go](/complements/go-templates)
 
 
-## Exemplo
+## Example
 
 ```yaml
 
@@ -46,7 +46,7 @@ create-release:
             fields:
                 - input:
                     label: "Release version"
-                    placeholder: "e.g. v1.0.1"
+                    placeholder: "e.g., v1.0.1"
                     out: releaseVersion
                 
         - load:
@@ -129,6 +129,6 @@ create-unreleased-file:
 
 ```
 
-## Executando uma run
+## Running a Run
 
-Confira a documentação completa do comando `kuma exec run` [aqui](/commands-cli/exec-run)
+Check the complete documentation for the `kuma exec run` command [here](/commands-cli/exec-run)

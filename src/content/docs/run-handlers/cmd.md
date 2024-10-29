@@ -1,11 +1,11 @@
 ---
 title: Cmd Handler
-description: Visão geral de Cmd Handler (Kuma Framework)
+description: Overview of Cmd Handler (Kuma Framework)
 ---
 
-Executa comandos no terminal durante a run.
+Executes commands in the terminal during the run.
 
-**Exemplo**:
+**Example**:
 ```yaml
 - cmd: "npm install"
 ```

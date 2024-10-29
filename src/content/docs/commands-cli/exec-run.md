@@ -1,9 +1,9 @@
 ---
 title: exec run
-description: Descrição do comando exec run (Kuma Framework)
+description: Description of the exec run command (Kuma Framework)
 ---
 
-Executa uma run que não pertence a nenhum um módulo.
+Executes a run that does not belong to any module.
 
 
 ```bash
@@ -11,9 +11,9 @@ kuma exec module [flags]
 ```
 
 ## Flags
-- `--run, -r`: O nome da run que será executada.
+- `--run, -r`: The name of the run to be executed.
 
-## Exemplo
+## Example
 
 ```bash
 kuma exec run --run setup-database 
@@ -21,6 +21,6 @@ kuma exec run --run setup-database
 
 ## TUI
 
-Para visualizar a interface de usuário do Kuma, execute apenas `kuma exec run` e as runs que não pertencem a nenhum módulo serão listadas.
+To view the Kuma user interface, simply execute `kuma exec run` and the runs that do not belong to any module will be listed.
 
 ![image](https://github.com/user-attachments/assets/e1daa12e-ca28-40ca-971d-6f6262a39669)

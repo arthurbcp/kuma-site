@@ -15,55 +15,49 @@ export default defineConfig({
       social: {
         github: "https://github.com/kuma-framework/kuma",
       },
+      defaultLocale: "root",
+      locales: {
+        root: {
+          label: "English",
+          lang: "en",
+        },
+        "pt": {
+          label: "Português",
+          lang: "pt",
+        },
+      },
       sidebar: [
         {
-          label: "Comece por aqui",
-          items: [
-            { label: "Começando", slug: "getting-started" },
-            { label: "Instalação", slug: "getting-started/installation" },
-            { label: "Primeiros passos", slug: "getting-started/usage" },
-          ],
+          label: "Get Started",
+          translations: {
+            pt: "Comece por aqui",
+          },
+          autogenerate: { directory: 'getting-started' },
         },
         {
-          label: "Visão geral",
-          items: [
-            { label: "Builders", slug: "overview/builders" },
-            { label: "Templates", slug: "overview/templates" },
-            { label: "Runs", slug: "overview/runs" },
-            { label: "Funções", slug: "overview/functions" },
-            { label: "Módulos", slug: "overview/modules" },
-          ]
+          label: "Overview",
+          translations: {
+            pt: "Visão geral",
+          },
+          autogenerate: { directory: 'overview' },
         },
         {
-          label: "Run handlers",
-          items: [
-            {label: "Form Handler", slug: "run-handlers/form"},
-            {label: "Cmd Handler", slug: "run-handlers/cmd"},
-            {label: "Define Handler", slug: "run-handlers/define"},
-            {label: "Log Handler", slug: "run-handlers/log"},
-            {label: "Load Handler", slug: "run-handlers/load"},
-            {label: "Create Handler", slug: "run-handlers/create"},
-            {label: "Modify Handler", slug: "run-handlers/modify"},
-            {label: "Run Handler", slug: "run-handlers/run"},
-            {label: "When Handler", slug: "run-handlers/when"},
-          ]
+          label: "Run Handlers",
+          autogenerate: { directory: 'run-handlers' },
         },
         {
-          label:"Comandos CLI",
-          items: [
-            { label: "create", slug: "commands-cli/create"},
-            { label: "exec run", slug: "commands-cli/exec-run"},
-            { label: "exec module", slug: "commands-cli/exec-module"},
-            { label: "module add", slug: "commands-cli/module-add"},
-            { label: "module rm", slug: "commands-cli/module-rm"},
-            { label: "modify", slug: "commands-cli/modify"},
-          ]
+          label:"CLI Commands",
+          translations: {
+            pt: "Comandos CLI",
+          },
+          autogenerate: { directory: 'commands-cli' },
         },
         {
-          label: "Complementos",
-          items: [
-            { label: "Go Text Templates", slug: "complements/go-templates" },
-          ]
+          label: "Complements",
+          translations: {
+            pt: "Complementos",
+          },
+          autogenerate: { directory: 'complements' },
         }       
       ],
       customCss: ["./src/styles/tailwind.css", "./src/styles/custom.css"],

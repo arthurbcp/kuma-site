@@ -5,26 +5,25 @@ export interface Project {
   name: string;
   description: string;
   github: string;
-  image: string;
 }
 
 export interface Props {
+  title: string;
   projects: Project[];
 }
 
-const { projects } = Astro.props;
+const { projects, title } = Astro.props;
 
 
 import { Card, Icon, LinkButton } from "@astrojs/starlight/components";
 ---
 
 <section class="py-20">
-  <h2 class="text-3xl font-bold mb-10 text-center">Construído com Kuma</h2>
+  <h2 class="text-3xl font-bold mb-10 text-center">{title}</h2>
     {projects.map((project, index) => (
       <div class={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
         <Card title={project.name}>
               <p>{project.description}</p>
-              <img src={project.image} alt={project.name} />
               <LinkButton href={project.github} target={"_blank"} variant="secondary">
                   Ver no GitHub<Icon name="github" class="h-6 w-6" />
               </LinkButton>

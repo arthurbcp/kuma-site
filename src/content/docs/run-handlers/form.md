@@ -1,37 +1,37 @@
 ---
 title: Form Handler
-description: Visão geral de Form Handler (Kuma Framework)
+description: Overview of Form Handler (Kuma Framework)
 ---
 
 
-É usado para exibir formulários interativos no terminal.
+It is used to display interactive forms in the terminal.
 
-**Propriedades**:
+**Properties**:
 
-- **title**: Define o título do formulário. Esse título é exibido no topo do formulário quando o usuário interage com ele no terminal.
-
-
-- **description**: Uma breve descrição que informa o propósito do formulário. Ela ajuda o usuário a entender o que deve ser preenchido.
+- **title**: Defines the title of the form. This title is displayed at the top of the form when the user interacts with it in the terminal.
 
 
-- **fields**: Lista de campos de entrada que serão exibidos no formulário. O `fields` pode conter diferentes tipos de campos.
+- **description**: A brief description that informs the purpose of the form. It helps the user understand what needs to be filled out.
 
-## Tipos de Campos
+
+- **fields**: A list of input fields that will be displayed in the form. The `fields` can contain different types of fields.
+
+## Field Types
 
 ---
 
 ### Input
-Um campo de entrada de texto onde o usuário pode digitar informações.
+An input field where the user can type information.
 
-- **label**: O rótulo exibido próximo ao campo de texto, informando ao usuário o que deve ser digitado.
-- **placeholder**: Um valor exibido dentro do campo como exemplo ou sugestão, até que o usuário digite algo.
-- **out**: O nome da variável onde o valor digitado pelo usuário será armazenado. **Required**
+- **label**: The label displayed next to the text field, informing the user what should be typed.
+- **placeholder**: A value displayed inside the field as an example or suggestion until the user types something.
+- **out**: The name of the variable where the value typed by the user will be stored. **Required**
 
-**Exemplo**:
+**Example**:
 ```yaml
 - input:
-    label: "Nome do Serviço"
-    placeholder: "Digite o nome do serviço"
+    label: "Service Name"
+    placeholder: "Type the name of the service"
     out: "serviceName"
 ```
 
@@ -39,36 +39,36 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 
 
   ### Text
-  Um campo no formato **Text Area** onde o usuário pode fornecer uma resposta mais longa.
+  A field in the format of a **Text Area** where the user can provide a longer response.
 
-  - **label**: O rótulo que descreve o campo de texto.
-  - **description**: Uma descrição adicional para orientar o usuário.
-  - **placeholder**: Um valor exemplo ou sugestão exibido no campo até que o usuário insira o texto.
-  - **out**: O nome da variável que armazenará o texto inserido pelo usuário. **Required**
+  - **label**: The label that describes the text field.
+  - **description**: An additional description to guide the user.
+  - **placeholder**: An example value or suggestion displayed in the field until the user enters text.
+  - **out**: The name of the variable that will store the text entered by the user. **Required**
 
-  **Exemplo**:
+  **Example**:
   ```yaml
   - text:
-      label: "Descrição do Projeto"
-      placeholder: "Digite uma breve descrição"
+      label: "Project Description"
+      placeholder: "Type a brief description"
       out: "projectDescription"
   ```
 
 ---
 
   ### Select
-  Um campo que permite ao usuário selecionar uma opção de uma lista.
+  A field that allows the user to select one option from a list.
 
-  - **label**: O rótulo que descreve o campo de seleção.
-  - **description**: Uma breve descrição que explica o que o campo representa.
-  - **out**: O nome da variável que armazenará o valor selecionado pelo usuário. **Required**
-  - **options**: Lista de opções que o usuário pode escolher. Cada opção tem uma `label` (exibido para o usuário) e um `value` (armazenado na variável). **Required**
+  - **label**: The label that describes the selection field.
+  - **description**: A brief description that explains what the field represents.
+  - **out**: The name of the variable that will store the value selected by the user. **Required**
+  - **options**: A list of options that the user can choose from. Each option has a `label` (displayed to the user) and a `value` (stored in the variable). **Required**
 
-  **Exemplo**:
+  **Example**:
   ```yaml
   - select:
-      label: "Escolha o tipo de banco de dados"
-      description: "Selecione o banco de dados que o serviço usará"
+      label: "Choose the type of database"
+      description: "Select the database that the service will use"
       out: "dbType"
       options:
         - label: "PostgreSQL"
@@ -80,18 +80,18 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 ---
 
   ### MultiSelect
-  Um campo que permite ao usuário selecionar várias opções de uma lista.
+  A field that allows the user to select multiple options from a list.
 
-  - **label**: O rótulo que descreve o campo de múltipla seleção.
-  - **description**: Uma breve descrição que ajuda o usuário a entender o propósito do campo.
-  - **out**: O nome da variável onde as opções selecionadas serão armazenadas. **Required**
-  - **options**: Lista de opções disponíveis para seleção múltipla. **Required**
-  - **limit**: Número máximo de opções que o usuário pode selecionar.
+  - **label**: The label that describes the multi-select field.
+  - **description**: A brief description that helps the user understand the purpose of the field.
+  - **out**: The name of the variable where the selected options will be stored. **Required**
+  - **options**: A list of available options for multiple selection. **Required**
+  - **limit**: The maximum number of options that the user can select.
 
-  **Exemplo**:
+  **Example**:
   ```yaml
   - multiselect:
-      label: "Selecione as tecnologias que você quer incluir"
+      label: "Select the technologies you want to include"
       out: "techStack"
       options:
         - label: "Docker"
@@ -104,20 +104,20 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
 ---
 
   ### Confirm
-  Um campo que exibe uma pergunta de confirmação, onde o usuário pode responder com "Sim" ou "Não".
+  A field that displays a confirmation question, where the user can respond with "Yes" or "No".
 
-  - **label**: O rótulo que descreve o campo de confirmação.
-  - **description**: Uma breve descrição que explica o que o usuário deve confirmar.
-  - **affirmative**: O texto que representa a resposta afirmativa. **Required**
-  - **negative**: O texto que representa a resposta negativa. **Required**
-  - **out**: O nome da variável que armazenará a resposta no formato booleano.
+  - **label**: The label that describes the confirmation field.
+  - **description**: A brief description that explains what the user should confirm.
+  - **affirmative**: The text that represents the affirmative answer. **Required**
+  - **negative**: The text that represents the negative answer. **Required**
+  - **out**: The name of the variable that will store the response in boolean format.
 
-  **Exemplo**:
+  **Example**:
   ```yaml
   - confirm:
-      label: "Deseja gerar a estrutura básica?"
-      description: "Confirmação para criar a estrutura inicial"
-      affirmative: "Sim"
-      negative: "Não"
+      label: "Do you want to generate the basic structure?"
+      description: "Confirmation to create the initial structure"
+      affirmative: "Yes"
+      negative: "No"
       out: "createBasicStructure"
   ```

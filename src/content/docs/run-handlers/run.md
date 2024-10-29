@@ -1,11 +1,11 @@
 ---
 title: Run Handler
-description: Visão geral de Run Handler (Kuma Framework)
+description: Overview of Run Handler (Kuma Framework)
 ---
 
-Executa outra run dentro da atual.
+Executes another run within the current one.
 
-**Exemplo**:
+**Example**:
 ```yaml
 - run: "setupDatabase"
 ```

@@ -1,28 +1,28 @@
 ---
 title: Templates
-description: Visão geral de Templates (Kuma Framework)
+description: Overview of Templates (Kuma Framework)
 ---
 
-**Templates** são arquivos que serão transformados pelo Kuma em [templates Go](/complements/go-templates) para gerar os arquivos finais para um processo de scaffolding.
+**Templates** are files that will be transformed by Kuma into [Go templates](/complements/go-templates) to generate the final files for a scaffolding process.
 
-### Variáveis
+### Variables
 
 
-As variáveis para templates no Kuma são classificadas entre dois tipos:
+The variables for templates in Kuma are classified into two types:
 
-- **data:** variáveis passadas na propriedade data de um arquivo da árvore do campo `structure` em um [builder](/overview/builders). Utilização: `.data.nomeVariavel`
+- **data:** variables passed in the data property of a file in the `structure` field tree within a [builder](/overview/builders). Usage: `.data.variableName`
 
-- **global:** variáveis globais, ou seja, que podem ser utilizadas em todos os templates. São definidas uma única vez na propriedade `global` dentro de um [builder](/overview/builders). Utilização: `.global.nomeVariavel`
+- **global:** global variables, meaning they can be used in all templates. They are defined once in the `global` property inside a [builder](/overview/builders). Usage: `.global.variableName`
 
-### Extensões
+### Extensions
 
-Arquivos de template no Kuma, aceitam qualquer extensão de arquivo de texto. Porém, é aconselhável utilizar uma das extensões abaixo para ter *Syntax Highlighting* em sua IDE.
+Template files in Kuma can accept any text file extension. However, it is advisable to use one of the extensions below to have *Syntax Highlighting* in your IDE.
 
-Extensões recomendadas: `*.go.txt, *.go.tpl, *.go.tmpl, *.gtpl *.tpl.`
+Recommended extensions: `*.go.txt, *.go.tpl, *.go.tmpl, *.gtpl, *.tpl.`
 
-### Exemplos
+### Examples
 ---
-Exemplo simples:
+Simple example:
 ```go
 // templates/Main.gtpl
 package main
@@ -36,7 +36,7 @@ func main() {
   fmt.Println("{{ .data.msg }}")
 }
 ```
-Resultado:
+Result:
 ```go
 // main.go
 package main
@@ -46,14 +46,14 @@ import (
 )
 
 func main() {
-  fmt.Println("Eu sou uma variável global")
-  fmt.Println("Eu sou uma variável local")
+  fmt.Println("I am a global variable")
+  fmt.Println("I am a local variable")
 }
 ```
 --- 
 
 
-Exemplo avançado:
+Advanced example:
 ```ts
 // templates/DTO.gptl
 {{- range .data.properties -}}
@@ -77,19 +77,19 @@ export type {{ toPascalCase .data.name }} = {
 }
 ```
 
-Resultado:
+Result:
 ```ts
-//Pet.ts
+// Pet.ts
 import { Category } from './category'
 import { Tag } from './tag'
 
 export type Pet = {
-    category?:Category
-    id?:number
-    name?:string
-    photoUrls?:string[]
-    status?:"available" | "pending" | "sold"
-    tags?:Tag[]
+    category?: Category
+    id?: number
+    name?: string
+    photoUrls?: string[]
+    status?: "available" | "pending" | "sold"
+    tags?: Tag[]
 }
 ```
-Para saber mais sobre text templates e como utilizá-los junto ao Kuma, acesse o link: [Text Templates no Go](/complements/go-templates)
+To learn more about text templates and how to use them with Kuma, visit the link: [Text Templates in Go](/complements/go-templates)

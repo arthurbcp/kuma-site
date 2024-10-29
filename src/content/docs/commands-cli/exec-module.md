@@ -1,9 +1,9 @@
 ---
 title: exec module
-description: Descrição do comando exec module (Kuma Framework)
+description: Description of the exec module command (Kuma Framework)
 ---
 
-Executa uma run que pertence a um módulo.
+Executes a run that belongs to a module.
 
 
 ```bash
@@ -11,10 +11,10 @@ kuma exec module [flags]
 ```
 
 ## Flags
-- `--run, -r`: O nome da run que será executada.
-- `--module, -m`: O nome do módulo que será executado.
+- `--run, -r`: The name of the run that will be executed.
+- `--module, -m`: The name of the module that will be executed.
 
-## Exemplo
+## Example
 
 ```bash
 kuma exec module --module crud-maker --run setup-database 
@@ -22,7 +22,7 @@ kuma exec module --module crud-maker --run setup-database
 
 ## TUI
 
-Para visualizar a interface de usuário do Kuma, execute apenas `kuma exec module` e todos os módulos serão listados.
-Se você quiser ver apenas as runs de um módulo específico, execute `kuma exec module --module <nome-do-modulo>`.
+To view the Kuma user interface, simply execute `kuma exec module` and all modules will be listed.
+If you want to see only the runs of a specific module, execute `kuma exec module --module <module-name>`.
 
 ![image](https://github.com/user-attachments/assets/ad260094-f30a-4cbb-9cc6-49b9af377613)

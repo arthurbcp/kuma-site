@@ -1,15 +1,15 @@
 ---
 title: Define Handler
-description: Visão geral de Define Handler (Kuma Framework)
+description: Overview of Define Handler (Kuma Framework)
 ---
 
-Define variáveis que podem ser utilizadas em etapas posteriores da [run](/overview/runs), [builders](/overview/builders) ou [templates](/overview/templates).
+Defines variables that can be used in later stages of the [run](/overview/runs), [builders](/overview/builders), or [templates](/overview/templates).
 
-**Propriedades**:
-- **variable**: O nome da variável que será definida.
-- **value**: O valor atribuído à variável.
+**Properties**:
+- **variable**: The name of the variable to be defined.
+- **value**: The value assigned to the variable.
 
-**Exemplo**:
+**Example**:
 ```yaml
 - define:
       variable: "dbConnection"

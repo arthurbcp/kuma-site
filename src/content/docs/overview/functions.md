@@ -1,32 +1,32 @@
 ---
-title: Funções
-description: Visão geral de Funções (Kuma Framework)
+title: Functions
+description: Overview of Functions (Kuma Framework)
 ---
 
-O Kuma importa todas as funções disponíveis no pacote [go-sproute](https://github.com/go-sprout/sprout), e também conta com uma série de funções proṕrias que serão descritas nesse documento.
+Kuma imports all the available functions in the [go-sproute](https://github.com/go-sprout/sprout) package, and also includes a series of its own functions that will be described in this document.
 
 
-## Funções de Parser
+## Parser Functions
 
 ### toYaml
 
-Converte uma estrutura de dados Go em um slice de strings formatado em YAML, onde cada elemento representa uma linha do YAML resultante. Esta função é útil para renderizar dados em um formato legível para os templates.
+Converts a Go data structure into a slice of strings formatted as YAML, where each element represents a line of the resulting YAML. This function is useful for rendering data in a format readable for templates.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func toYaml(data interface{}) []string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `data`: A estrutura de dados a ser convertida em YAML.
+- `data`: The data structure to be converted to YAML.
 
-**Retorna:**
+**Returns:**
 
-Um slice de strings contendo a representação YAML dos dados.
+A slice of strings containing the YAML representation of the data.
 
-**Exemplo**
+**Example**
 
 ```yaml
 # input:
@@ -48,28 +48,28 @@ data:
 
 ---
 
-## Funções de Agrupamento
+## Grouping Functions
 
 ### groupByKey
 
-Organiza um slice de mapas com base em uma chave especificada. Ele retorna um mapa onde as chaves são valores únicos encontrados na chave especificada nos itens de entrada, e os valores são slices de itens que compartilham esse valor de chave.
+Organizes a slice of maps based on a specified key. It returns a map where the keys are unique values found in the specified key in the input items, and the values are slices of items that share that key value.
 
-**Assinatura:**
+**Signature:**
 
 ```go
-func groupByKey(data []interface{}, key string) map[string]interface{
+func groupByKey(data []interface{}, key string) map[string]interface
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `data`: Um slice de mapas onde cada mapa representa um item com pares chave-valor.
-- `key`: A chave usada para agrupar itens no slice de dados.
+- `data`: A slice of maps where each map represents an item with key-value pairs.
+- `key`: The key used to group items in the data slice.
 
-**Retorna:**
+**Returns:**
 
-Um mapa onde cada chave representa um valor único da chave especificada no slice de dados, e o valor correspondente é um slice de itens que possuem esse valor de chave.
+A map where each key represents a unique value of the specified key in the data slice, and the corresponding value is a slice of items that have that key value.
 
-**Exemplo**
+**Example**
 
 ```yaml
 # input:
@@ -96,27 +96,27 @@ Um mapa onde cada chave representa um valor único da chave especificada no slic
 
 ---
 
-## Funções OpenAPI
+## OpenAPI Functions
 
 ### getRefFrom
 
-Extrai o identificador de referência de um objeto OpenAPI 2.0 se existir. A função espera que a referência esteja no formato de um ponteiro JSON dentro da especificação OpenAPI.
+Extracts the reference identifier from an OpenAPI 2.0 object if it exists. The function expects the reference to be in the form of a JSON pointer within the OpenAPI specification.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getRefFrom(object map[string]interface{}) string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `object`: Um mapa que representa um objeto OpenAPI que pode conter um campo $ref.
+- `object`: A map representing an OpenAPI object that may contain a $ref field.
 
-**Retorna:**
+**Returns:**
 
-Uma string contendo o identificador de referência ou uma string vazia se nenhuma referência válida for encontrada.
+A string containing the reference identifier or an empty string if no valid reference is found.
 
-**Exemplo**
+**Example**
 
 ```yaml
 # input:
@@ -134,25 +134,25 @@ Uma string contendo o identificador de referência ou uma string vazia se nenhum
 
 ### getPathsByTag
 
-Filtra caminhos OpenAPI por uma tag especificada. Ele retorna um subconjunto de caminhos que estão associados com a tag fornecida, útil para gerar documentação para seções específicas de uma API.
+Filters OpenAPI paths by a specified tag. It returns a subset of paths that are associated with the provided tag, useful for generating documentation for specific sections of an API.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getPathsByTag(paths map[string]interface{},
 tag string) map[string]interface{}
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `paths`: Um mapa onde as chaves são nomes de caminhos e os valores são objetos de itens de caminho.
-- `tag`: A tag usada para filtrar caminhos.
+- `paths`: A map where the keys are path names and the values are path item objects.
+- `tag`: The tag used to filter paths.
 
-**Retorna:**
+**Returns:**
 
-Um mapa contendo os caminhos que incluem a tag especificada.
+A map containing the paths that include the specified tag.
 
-**Exemplo**
+**Example**
 
 ```yaml
 # input:
@@ -209,25 +209,25 @@ Um mapa contendo os caminhos que incluem a tag especificada.
 
 ### getParamsByType
 
-Filtra parâmetros com base no tipo do campo `in` (por exemplo, query, header, path, formData). Esta função ajuda a extrair parâmetros de um determinado tipo de uma operação OpenAPI.
+Filters parameters based on the type of the `in` field (e.g., query, header, path, formData). This function helps extract parameters of a specific type from an OpenAPI operation.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getParamsByType(params []interface{},
 paramType string) []interface{}
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `params`: Um slice de objetos de parâmetros.
-- `paramType`: O tipo de parâmetros para filtrar (por exemplo, "query").
+- `params`: A slice of parameter objects.
+- `paramType`: The type of parameters to filter (e.g., "query").
 
-**Retorna:**
+**Returns:**
 
-Um slice de parâmetros que correspondem ao tipo especificado.
+A slice of parameters that match the specified type.
 
-**Exemplo**
+**Example**
 
 ```yaml
 # input:
@@ -261,28 +261,28 @@ Um slice de parâmetros que correspondem ao tipo especificado.
 
 ---
 
-## Funções de Arquivos
+## File Functions
 
 ### getFileContent
 
-Lê e retorna o conteúdo de um arquivo fornecido como uma string. Ela é útil para inserir o conteúdo de arquivos dentro de templates Go.
+Reads and returns the content of a file provided as a string. It is useful for inserting the content of files into Go templates.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFileContent(filePath string) string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo a ser lido.
+- `filePath`: The full path of the file to be read.
 
-**Retorna:**
+**Returns:**
 
-- O conteúdo do arquivo como uma string.
-- Uma string vazia se ocorrer um erro.
+- The content of the file as a string.
+- An empty string if an error occurs.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $content := getFileContent "/path/to/file.txt" }}
@@ -293,24 +293,24 @@ func getFileContent(filePath string) string
 
 ### getFilesList
 
-Retorna uma lista de nomes de arquivos em um diretório. Pode ser usada para listar arquivos em um diretório dentro de um template Go.
+Returns a list of file names in a directory. It can be used to list files in a directory within a Go template.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFilesList(path string) []string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `path`: O caminho do diretório onde os arquivos serão listados.
+- `path`: The path of the directory where the files will be listed.
 
-**Retorna:**
+**Returns:**
 
-- Um slice de strings contendo os nomes dos arquivos no diretório.
-- Um slice vazio se houver um erro.
+- A slice of strings containing the names of the files in the directory.
+- An empty slice if an error occurs.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $files := getFilesList "/path/to/directory" }}
@@ -321,51 +321,51 @@ func getFilesList(path string) []string
 
 ### getFileExtension
 
-Retorna a extensão de um arquivo a partir do seu caminho. Útil para condicionar a lógica de templates com base no tipo de arquivo.
+Returns the extension of a file from its path. Useful for conditioning template logic based on the file type.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFileExtension(filePath string) string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo.
+- `filePath`: The full path of the file.
 
-**Retorna:**
+**Returns:**
 
-- A extensão do arquivo como uma string.
-- Uma string vazia se o arquivo não tiver extensão.
+- The file extension as a string.
+- An empty string if the file has no extension.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $ext := getFileExtension "/path/to/file.txt" }}
-{{ if eq $ext "txt" }}Este é um arquivo de texto.{{ end }}
+{{ if eq $ext "txt" }}This is a text file.{{ end }}
 ```
 
 ---
 
 ### getFileName
 
-Retorna o nome do arquivo, sem o caminho. Pode ser usada para exibir apenas o nome do arquivo em templates.
+Returns the file name, excluding the path. It can be used to display only the file name in templates.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFileName(filePath string) string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo.
+- `filePath`: The full path of the file.
 
-**Retorna:**
+**Returns:**
 
-- O nome do arquivo como uma string.
+- The file name as a string.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $fileName := getFileName "/path/to/file.txt" }}
@@ -376,23 +376,23 @@ func getFileName(filePath string) string
 
 ### getFilePath
 
-Retorna o diretório onde o arquivo está localizado. Pode ser usada para acessar o caminho do diretório dentro de um template Go.
+Returns the directory where the file is located. It can be used to access the directory path within a Go template.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFilePath(filePath string) string
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo.
+- `filePath`: The full path of the file.
 
-**Retorna:**
+**Returns:**
 
-- O caminho do diretório como uma string.
+- The directory path as a string.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $dir := getFilePath "/path/to/file.txt" }}
@@ -403,102 +403,102 @@ func getFilePath(filePath string) string
 
 ### fileExists
 
-Verifica se um arquivo existe no sistema de arquivos. Ela é útil para verificar a existência de arquivos antes de utilizá-los em templates Go.
+Checks if a file exists in the filesystem. It is useful for verifying the existence of files before using them in Go templates.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func fileExists(filePath string) bool
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo.
+- `filePath`: The full path of the file.
 
-**Retorna:**
+**Returns:**
 
-- `true` se o arquivo existir, `false` caso contrário.
+- `true` if the file exists, `false` otherwise.
 
-**Exemplo**
+**Example**
 
 ```go
-{{ if fileExists "/path/to/file.txt" }}O arquivo existe.{{ else }}O arquivo não existe.{{ end }}
+{{ if fileExists "/path/to/file.txt" }}The file exists.{{ else }}The file does not exist.{{ end }}
 ```
 
 ---
 
 ### isDirectory
 
-Verifica se um caminho é um diretório. Pode ser usada para diferenciar diretórios de arquivos em um template Go.
+Checks if a path is a directory. It can be used to differentiate directories from files in a Go template.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func isDirectory(filePath string) bool
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo a ser verificado.
+- `filePath`: The full path to be checked.
 
-**Retorna:**
+**Returns:**
 
-- `true` se o caminho for um diretório, `false` caso contrário.
+- `true` if the path is a directory, `false` otherwise.
 
-**Exemplo**
+**Example**
 
 ```go
-{{ if isDirectory "/path/to/directory" }}Isso é um diretório.{{ else }}Isso é um arquivo.{{ end }}
+{{ if isDirectory "/path/to/directory" }}This is a directory.{{ else }}This is a file.{{ end }}
 ```
 
 ---
 
 ### isFile
 
-Verifica se um caminho é um arquivo. Pode ser usada para diferenciar arquivos de diretórios em um template Go.
+Checks if a path is a file. It can be used to differentiate files from directories in a Go template.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func isFile(filePath string) bool
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo a ser verificado.
+- `filePath`: The full path to be checked.
 
-**Retorna:**
+**Returns:**
 
-- `true` se o caminho for um arquivo, `false` caso contrário.
+- `true` if the path is a file, `false` otherwise.
 
-**Exemplo**
+**Example**
 
 ```go
-{{ if isFile "/path/to/file.txt" }}Isso é um arquivo.{{ else }}Isso não é um arquivo.{{ end }}
+{{ if isFile "/path/to/file.txt" }}This is a file.{{ else }}This is not a file.{{ end }}
 ```
 
 ---
 
 ### getFileSize
 
-Retorna o tamanho de um arquivo em bytes.
+Returns the size of a file in bytes.
 
-**Assinatura:**
+**Signature:**
 
 ```go
 func getFileSize(filePath string) int64
 ```
 
-**Parâmetros:**
+**Parameters:**
 
-- `filePath`: O caminho completo do arquivo.
+- `filePath`: The full path of the file.
 
-**Retorna:**
+**Returns:**
 
-- O tamanho do arquivo em bytes.
-- `0` se ocorrer um erro.
+- The size of the file in bytes.
+- `0` if an error occurs.
 
-**Exemplo**
+**Example**
 
 ```go
 {{ $size := getFileSize "/path/to/file.txt" }}
@@ -506,4 +506,3 @@ func getFileSize(filePath string) int64
 ```
 
 ---
-`

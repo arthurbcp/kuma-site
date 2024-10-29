@@ -1,24 +1,24 @@
 ---
 title: Load Handler
-description: Visão geral de Load Handler (Kuma Framework)
+description: Overview of Load Handler (Kuma Framework)
 ---
 
-Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
+Loads data from a local or remote file (JSON or YAML) and stores it in a variable.
 
-**Propriedades**:
-- **from**: Caminho do arquivo a ser carregado. Pode ser um arquivo local ou remoto.
-- **out**: O nome da variável que armazenará os dados carregados.
+**Properties**:
+- **from**: Path to the file to be loaded. It can be a local or remote file.
+- **out**: The name of the variable that will store the loaded data.
 
-**Exemplos**:
+**Examples**:
 
-**arquivo local**:
+**local file**:
 ```yaml
 - load:
     from: "./unreleased.json"
     out: "unreleased"
 ```
 
-**arquivo remoto**:
+**remote file**:
 ```yaml
 - load:
     from: "https://petstore.swagger.io/v2/swagger.json"

@@ -1,28 +1,28 @@
 ---
 title: Go Text Templates
-description: Guia resumido de text templates em Go para usar junto ao Kuma Framework
+description: A brief guide to text templates in Go for use with the Kuma Framework
 ---
 
-Os text templates em Go são uma ferramenta poderosa para gerar textos dinâmicos. Elas permitem inserir valores, executar lógica condicional, iterar sobre coleções e muito mais dentro de strings. Neste documento, exploraremos como funcionam as text templates em Go, incluindo exemplos de uso de `range`, `if`, iteração sobre mapas, funções, blocos e composição de templates.
+Go text templates are a powerful tool for generating dynamic text. They allow you to insert values, execute conditional logic, iterate over collections, and much more within strings. In this document, we will explore how text templates in Go work, including examples of using `range`, `if`, iterating over maps, functions, blocks, and template composition.
 
-## Sintaxe Básica
+## Basic Syntax
 
-A sintaxe básica para templates em Go utiliza chaves duplas `{{ }}` para delimitar ações dentro da string do template.
+The basic syntax for templates in Go uses double curly braces `{{ }}` to delimit actions within the template string.
 
-Exemplo simples:
+Simple example:
 
 ```
 Name: {{.data.Name}}
 Age: {{.data.Age}}
 ```
 
-## Estruturas de Controle
+## Control Structures
 
-### Condicionais (`if`)
+### Conditionals (`if`)
 
-A diretiva `if` permite executar código condicionalmente.
+The `if` directive allows you to execute code conditionally.
 
-Exemplo:
+Example:
 
 ```
 {{if .data.Active}}
@@ -32,13 +32,13 @@ User is not active.
 {{end}}
 ```
 
-### Iteração (`range`)
+### Iteration (`range`)
 
-A diretiva `range` permite iterar sobre slices e mapas.
+The `range` directive allows you to iterate over slices and maps.
 
-#### Iterando sobre Slices
+#### Iterating over Slices
 
-Exemplo:
+Example:
 
 ```
 List of Fruits:
@@ -47,11 +47,11 @@ List of Fruits:
 {{end}}
 ```
 
-#### Iterando sobre Mapas
+#### Iterating over Maps
 
-Ao iterar sobre mapas, você pode acessar tanto as chaves quanto os valores.
+When iterating over maps, you can access both the keys and the values.
 
-Exemplo:
+Example:
 
 ```
 Players' Scores:
@@ -60,32 +60,32 @@ ${$name}: ${$score} points
 {{end}}
 ```
 
-## Funções nos Templates
+## Functions in Templates
 
-### Funções Predefinidas
+### Predefined Functions
 
-Algumas funções estão disponíveis por padrão, como `len`, `print`, `printf` e `println`.
+Some functions are available by default, such as `len`, `print`, `printf`, and `println`.
 
-Exemplo:
+Example:
 
 ```
 The total number of items is {{len .data.Items}}
 ```
 
-### Funções Personalizadas
+### Custom Functions
 
-No Kuma, você terá acesso a todas as funções do pacote [go-sproute](https://github.com/go-sprout/sprout) e também uma série de funções customizadas específicas para o Kuma. Acesse o [Guia sobre funções]() para saber mais a respeito.
+In Kuma, you will have access to all the functions from the [go-sproute](https://github.com/go-sprout/sprout) package as well as a series of custom functions specific to Kuma. Check the [Guide on functions]() for more information.
 
 ```
 Original text: {{.data.Text}}
 Uppercase text: {{ToUpperCase .data.Text}}
 ```
 
-## Blocos e Composição de Templates
+## Blocks and Template Composition
 
-### Definindo e Usando Templates
+### Defining and Using Templates
 
-Você pode definir partes de um template para reutilização:
+You can define parts of a template for reuse:
 
 ```
 {{define "header"}}
@@ -100,11 +100,11 @@ Content: {{.data.Content}}
 {{template "body" .}}
 ```
 
-### Blocos
+### Blocks
 
-Blocos permitem que você defina áreas que podem ser sobrescritas por outros templates.
+Blocks allow you to define areas that can be overridden by other templates.
 
-Exemplo:
+Example:
 ```
 {{define "base"}}
 Title: {{block "title" .}}Default Title{{end}}
@@ -118,9 +118,9 @@ Content:
 {{template "base" .}}
 ```
 
-## Exemplo Completo
+## Complete Example
 
-Aqui está um exemplo que combina vários recursos dos templates em Go:
+Here is an example that combines several features of Go templates:
 
 ```
 Product List:
@@ -132,4 +132,4 @@ Product List:
 Total products: {{len .data.Products}}
 ```
 
-Acesse a documentação oficial aqui: [Go text templates](https://pkg.go.dev/text/template)
+Access the official documentation here: [Go text templates](https://pkg.go.dev/text/template)

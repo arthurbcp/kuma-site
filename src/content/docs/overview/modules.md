@@ -1,35 +1,35 @@
 ---
-title: Módulos
-description: Visão geral de Módulos (Kuma Framework)
+title: Modules
+description: Overview of Modules (Kuma Framework)
 ---
 
-O sistema de módulos do Kuma permite que desenvolvedores criem, compartilhem e reutilizem estruturas de templates de forma modular. Esses módulos são repositórios independentes que contêm [templates](/overflow/templates), [builders](/overflow/builders) e [runs](/overview/runs).
+The Kuma module system allows developers to create, share, and reuse template structures in a modular way. These modules are independent repositories that contain [templates](/overflow/templates), [builders](/overflow/builders), and [runs](/overview/runs).
 
-## Estrutura
+## Structure
 
-A estrutura de um módulo no Kuma é a mesma que você já está acostumado. Qualquer repositório do Github com uma pasta `.kuma` na raiz contendo pelo menos uma run, pode se tornar um módulo se você adicionar um arquivo chamado `kuma-config.yaml` na raiz do repositório.
+The structure of a module in Kuma is the same as you are already familiar with. Any GitHub repository with a `.kuma` folder at the root containing at least one run can become a module if you add a file called `kuma-config.yaml` in the root of the repository.
 
-O arquivo `kuma-config.yaml`, deve seguir o seguinte formato:
+The `kuma-config.yaml` file should follow the following format:
 
 ```yaml
-description: Meu módulo # Descrição do módulo
-version: 1.0.0 # Versão do módulo
+description: My module # Module description
+version: 1.0.0 # Module version
 ```
 
 
-## Adicionando um módulo
+## Adding a module
 
-Para adicionar um módulo do Kuma ao seu projeto, execute o comando `kuma module add -repository myorgazitaion/myrepository`.
-Ou se preferir, você pode digitar apenas `kuma module add`, e escolher um dos nossos módulos oficiais.
+To add a Kuma module to your project, run the command `kuma module add -repository myorganization/myrepository`.
+Or if you prefer, you can simply type `kuma module add` and choose one of our official modules.
 
-Ao adicionar um módulo ao seu projeto, o Kuma copiará o repositório do módulo  para dentro da pasta `.kuma`. Para gerenciar os módulos, o Kuma também criará um arquivo chamado `kuma-modules.yaml`, que será editado automaticamente sempre que um módulo for adicionado ou removido do seu projeto.
+When adding a module to your project, Kuma will copy the module repository into the `.kuma` folder. To manage the modules, Kuma will also create a file called `kuma-modules.yaml`, which will be automatically updated whenever a module is added or removed from your project.
 
-Confira a documentação completa do comando `kuma module add` [aqui](/commands-cli/module-add).
+Check the complete documentation of the `kuma module add` command [here](/commands-cli/module-add).
 
-## Chamando uma run de um módulo
+## Calling a run from a module
 
-Confira a documentação completa do comando `kuma exec module` [aqui](/commands-cli/exec-module)
+Check the complete documentation of the `kuma exec module` command [here](/commands-cli/exec-module).
 
-## Removendo um módulo
+## Removing a module
 
-Confira a documentação completa do comando `kuma module rm` [aqui](/commands-cli/exec-module)
+Check the complete documentation of the `kuma module rm` command [here](/commands-cli/exec-module).

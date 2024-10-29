@@ -1,14 +1,14 @@
 ---
 title: Create Handler
-description: Visão geral de Create Handler (Kuma Framework)
+description: Overview of Create Handler (Kuma Framework)
 ---
 
-Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
+Generates new files or directories from templates based on a predefined structure.
 
-**Propriedades**:
-- **from**: Caminho do [builder](/overview/builders) onde o template está localizado. 
+**Properties**:
+- **from**: Path to the [builder](/overview/builders) where the template is located. 
 
-**Exemplo**:
+**Example**:
 ```yaml
 - create:
     from: "builders/projectStructure.yaml"

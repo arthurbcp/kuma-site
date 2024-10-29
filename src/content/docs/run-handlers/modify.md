@@ -1,21 +1,21 @@
 ---
 title: Modify Handler
-description: Visão geral de Modify Handler (Kuma Framework)
+description: Overview of Modify Handler (Kuma Framework)
 ---
 
-Altera arquivos existentes com base em templates, permitindo inserir, substituir ou remover conteúdo.
+Alters existing files based on templates, allowing you to insert, replace, or remove content.
 
-**Propriedades**:
-- **file**: O caminho do arquivo que será modificado.
-- **template**: O caminho do template usado para modificar o arquivo.
-- **mark**: Marcador no arquivo que define onde a alteração será feita.
-- **action**: A ação a ser realizada, que pode ser:
-  - **replace**: Substitui o marcador com o conteúdo do template (Deixe vazio se quiser que todo o conteúdo seja substituído).
-  - **insert-before**: Insere o conteúdo antes do marcador.
-  - **insert-after**: Insere o conteúdo após o marcador.
-  - **replace-between**: Substitui o conteúdo entre dois marcadores separados por `,`.
+**Properties**:
+- **file**: The path of the file to be modified.
+- **template**: The path of the template used to modify the file.
+- **mark**: A marker in the file that defines where the change will be made.
+- **action**: The action to be performed, which can be:
+  - **replace**: Replaces the marker with the content of the template (Leave empty if you want the entire content to be replaced).
+  - **insert-before**: Inserts the content before the marker.
+  - **insert-after**: Inserts the content after the marker.
+  - **replace-between**: Replaces the content between two markers separated by `,`.
 
-**Exemplos**:
+**Examples**:
 
 ```yaml
 - modify:

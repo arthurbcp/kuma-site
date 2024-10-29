@@ -1,18 +1,18 @@
 ---
 title: module add
-description: Descrição do comando module add (Kuma Framework)
+description: Description of the module add command (Kuma Framework)
 ---
 
-Adiciona um módulo do Kuma ao seu projeto.
+Adds a Kuma module to your project.
 
 ```bash
 kuma module add [flags]
 ```
 
 ## Flags
-- `--repository, -r`: O nome do repositório do módulo que será adicionado.
+- `--repository, -r`: The name of the repository of the module to be added.
 
-## Exemplo
+## Example
 
 ```bash
 kuma module add --repository kuma-framework/kuma-hello-world
@@ -20,6 +20,6 @@ kuma module add --repository kuma-framework/kuma-hello-world
 
 ## TUI
 
-Para visualizar a interface de usuário do Kuma, execute apenas `kuma module add` e todos os módulos serão listados.
+To view the Kuma user interface, simply run `kuma module add` and all modules will be listed.
 
 ![image](https://github.com/user-attachments/assets/a47b81c0-7098-4899-ab14-8a891d0dc312)

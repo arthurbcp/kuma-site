@@ -1,66 +1,66 @@
 ---
-title: Instalação
-description: Guia de instalação do Kuma Framework
+title: Installation
+description: Installation guide for the Kuma Framework
 ---
 
-### Requisitos
+### Requirements
 
-- [Go](https://golang.org/dl/) versão 1.23 ou superior.
-- [Git](https://git-scm.com/downloads) instalado e configurado no seu sistema.
+- [Go](https://golang.org/dl/) version 1.23 or higher.
+- [Git](https://git-scm.com/downloads) installed and configured on your system.
 
-### Passo a Passo
+### Step by Step
 
-1. **Execute o comando de instalação:**
+1. **Run the installation command:**
 
    ```bash
    go install github.com/kuma-framework/kuma/v2@latest
    ```
 
-2. **Adicione o diretório bin do Go ao seu PATH (se ainda não estiver incluído):**
+2. **Add the Go bin directory to your PATH (if it is not already included):**
 
-   Adicione a seguinte linha ao seu arquivo de configuração do shell (`.bashrc`, `.zshrc`, etc.):
+   Add the following line to your shell configuration file (`.bashrc`, `.zshrc`, etc.):
 
    ```bash
    export PATH=$PATH:$(go env GOPATH)/bin
    ```
 
-   Em seguida, recarregue seu shell ou execute:
+   Then, reload your shell or run:
 
    ```bash
    source ~/.bashrc
    ```
 
-   _Substitua `.bashrc` pelo seu arquivo de configuração do shell, se necessário._
+   _Replace `.bashrc` with your shell configuration file if necessary._
 
-3. **Verifique se o \$GOPATH está configurado corretamente:**
+3. **Verify that \$GOPATH is configured correctly:**
 
-   Execute o seguinte comando para exibir o valor atual de \$GOPATH:
+   Run the following command to display the current value of \$GOPATH:
 
    ```bash
    echo $GOPATH
    ```
 
-   **Resultados Esperados:**
+   **Expected Results:**
 
-   - **Se \$GOPATH estiver configurado corretamente:** O comando retornará o caminho para o diretório GOPATH, geralmente algo como `/home/usuario/go` no Linux ou `C:Users/usuario/go` no Windows.
-   - **Se \$GOPATH estiver vazio ou incorreto:** Você precisará configurá-lo adicionando a seguinte linha ao seu arquivo de configuração do shell:
+   - **If \$GOPATH is configured correctly:** The command will return the path to the GOPATH directory, usually something like `/home/user/go` on Linux or `C:Users/user/go` on Windows.
+   - **If \$GOPATH is empty or incorrect:** You will need to configure it by adding the following line to your shell configuration file:
 
      ```bash
      export GOPATH=$(go env GOPATH)
      ```
 
-     Em seguida, recarregue seu shell ou execute:
+     Then, reload your shell or run:
 
      ```bash
      source ~/.bashrc
      ```
 
-     _Substitua `.bashrc` pelo seu arquivo de configuração do shell, se necessário._
+     _Replace `.bashrc` with your shell configuration file if necessary._
 
-4. **Verifique a instalação:**
+4. **Verify the installation:**
 
    ```bash
    kuma --help
    ```
 
-   Você deve ver a ajuda do CLI do Kuma, confirmando que a instalação foi bem-sucedida.
+   You should see the help for the Kuma CLI, confirming that the installation was successful.

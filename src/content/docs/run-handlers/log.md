@@ -1,12 +1,12 @@
 ---
 title: Log Handler
-description: Visão geral de Log Handler (Kuma Framework)
+description: Overview of Log Handler (Kuma Framework)
 ---
 
-Permite exibir mensagens no terminal durante a execução da run.
+Allows you to display messages in the terminal during the execution of the run.
 
 
-**Exemplo**:
+**Example**:
 ```yaml
-- log: "Serviço {{.data.serviceName}} criado com sucesso."
+- log: "Service {{.data.serviceName}} created successfully."
 ```

@@ -1,13 +1,13 @@
 ---
-title: Sobre o Kuma
-description: Guia inicial do Kuma Framework
+title: About Kuma
+description: Getting Started Guide for the Kuma Framework
 ---
 
-Kuma é um framework poderoso projetado para gerar scaffolds para qualquer linguagem de programação, baseado em [templates Go](https://pkg.go.dev/text/template). Ele simplifica o processo de configuração de novos projetos automatizando a criação de diretórios, arquivos e código base, garantindo consistência e economizando tempo valioso de desenvolvimento. Além disso, o Kuma possui uma TUI personalizável, proporcionando uma experiência intuitiva e eficiente tanto para quem cria scaffolds quanto para quem os utiliza, tornando o processo acessível e fluido para desenvolvedores de todos os níveis.
+Kuma is a powerful framework designed to generate scaffolds for any programming language, based on [Go templates](https://pkg.go.dev/text/template). It simplifies the setup process for new projects by automating the creation of directories, files, and base code, ensuring consistency and saving valuable development time. Additionally, Kuma features a customizable TUI, providing an intuitive and efficient experience for both scaffold creators and users, making the process accessible and smooth for developers of all levels.
 
-## Recursos
+## Features
 
-- Personalize a estrutura de diretórios e arquivos do seu projeto através de [templates Go](https://pkg.go.dev/text/template).
-- Integração com o GitHub para baixar templates pré-definidos da comunidade ou para uso pessoal via repositórios privados.
-- Capacidade de criar fluxos de trabalho de comandos personalizados CLI/TUI através de um arquivo YAML usando runs.
-- Uso de variáveis dinâmicas aplicáveis aos templates. As variáveis podem ser extraídas de um arquivo YAML ou JSON local ou buscadas de uma URL pública. Elas também podem ser obtidas a partir da entrada do usuário durante a execução de um [run](cmd/commands/exec).
+- Customize the directory and file structure of your project using [Go templates](https://pkg.go.dev/text/template).
+- Integration with GitHub to download predefined community templates or for personal use via private repositories.
+- Ability to create custom CLI/TUI command workflows through a YAML file using runs.
+- Use of dynamic variables applicable to templates. Variables can be extracted from a local YAML or JSON file or fetched from a public URL. They can also be obtained from user input during the execution of a [run](cmd/commands/exec).
