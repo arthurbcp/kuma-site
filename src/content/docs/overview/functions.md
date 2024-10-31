@@ -260,7 +260,7 @@ A slice of parameters that match the specified type.
 ```
 ---
 
-#### GetAllTags
+### GetAllTags
 
 GetAllTags extracts all unique tags from OpenAPI paths. It processes each operation within each path to collect tags and returns them as a slice of strings.
 
@@ -303,9 +303,7 @@ A slice of strings containing all unique tags found in the paths.
 
 ---
 
----
-
-#### GetRefsList
+### GetRefsList
 
 GetRefsList extracts all unique reference identifiers from an OpenAPI 2.0 paths object. It recursively traverses the paths object and collects all $ref values, removing duplicates.
 

@@ -261,6 +261,112 @@ Um slice de parâmetros que correspondem ao tipo especificado.
 
 ---
 
+### GetAllTags
+
+GetAllTags extrai todas as tags únicas dos caminhos OpenAPI. Ele processa cada operação dentro de cada caminho para coletar tags e retorna como uma slice de strings.
+
+**Assinatura:**
+
+```go
+func GetAllTags(paths map[string]interface{}) []string
+```
+
+**Parâmetros:**
+
+- `paths`: Um mapa onde as chaves são nomes de caminhos e os valores são objetos de item de caminho.
+
+**Retorna:**
+
+Uma slice de strings contendo todas as tags únicas encontradas nos caminhos.
+
+**Exemplo**
+
+```yaml
+# input:
+# paths: {
+#   "/pet/{petId}": {
+#       "get": {
+#         "tags": ["pet"],
+#         "summary": "Find pet by ID"
+#       }
+#   },
+#   "/user/login": {
+#       "get": {
+#         "tags": ["user"],
+#         "summary": "Logs user into the system"
+#       }
+#   }
+# }
+"{{ getAllTags .paths }}"
+# output:
+# ["pet", "user"]
+```
+
+---
+
+### GetRefsList
+
+GetRefsList extrai todos os identificadores de referência únicos de um objeto paths do OpenAPI 2.0. Ele percorre recursivamente o objeto paths e coleta todos os valores $ref, removendo duplicatas.
+
+**Assinatura:**
+
+```go
+func GetRefsList(paths map[string]interface{}) []string
+```
+
+**Parâmetros:**
+
+- `paths`: Um mapa representando os caminhos e suas operações do OpenAPI
+
+**Retorna:**
+
+Uma slice de identificadores de referência únicos encontrados no objeto paths.
+
+**Exemplo**
+
+```yaml
+# input:
+# paths: {
+#   "/pet/{petId}": {
+#     "get": {
+#       "responses": {
+#         "200": {
+#           "schema": {
+#             "$ref": "#/definitions/Pet"
+#           }
+#         },
+#         "404": {
+#           "schema": {
+#             "$ref": "#/definitions/Error"
+#           }
+#         }
+#       },
+#       "parameters": [
+#         {
+#           "schema": {
+#             "$ref": "#/definitions/PetRequest"
+#           }
+#         }
+#       ]
+#     },
+#     "put": {
+#       "responses": {
+#         "200": {
+#           "schema": {
+#             "$ref": "#/definitions/Pet"
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+"{{ getRefsList .paths }}"
+# output:
+# ["Pet", "Error", "PetRequest"]
+```
+
+---
+
 ## Funções de Arquivos
 
 ### getFileContent
