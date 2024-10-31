@@ -24,6 +24,7 @@ import { Card, Icon, LinkButton } from "@astrojs/starlight/components";
       <div class={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
         <Card title={project.name}>
               <p>{project.description}</p>
+              
               <LinkButton href={project.github} target={"_blank"} variant="secondary">
                   Ver no GitHub<Icon name="github" class="h-6 w-6" />
               </LinkButton>

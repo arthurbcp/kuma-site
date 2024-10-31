@@ -258,6 +258,113 @@ A slice of parameters that match the specified type.
 #      }
 #  ]
 ```
+---
+
+#### GetAllTags
+
+GetAllTags extracts all unique tags from OpenAPI paths. It processes each operation within each path to collect tags and returns them as a slice of strings.
+
+**Signature:**
+
+```go
+func GetAllTags(paths map[string]interface{}) []string
+```
+
+**Parameters:**
+
+- `paths`: A map where keys are path names and values are path item objects.
+
+**Returns:**
+
+A slice of strings containing all unique tags found in the paths.
+
+**Example**
+
+```yaml
+# input:
+# paths: {
+#   "/pet/{petId}": {
+#       "get": {
+#         "tags": ["pet"],
+#         "summary": "Find pet by ID"
+#       }
+#   },
+#   "/user/login": {
+#       "get": {
+#         "tags": ["user"],
+#         "summary": "Logs user into the system"
+#       }
+#   }
+# }
+"{{ getAllTags .paths }}"
+# output:
+# ["pet", "user"]
+```
+
+---
+
+---
+
+#### GetRefsList
+
+GetRefsList extracts all unique reference identifiers from an OpenAPI 2.0 paths object. It recursively traverses the paths object and collects all $ref values, removing duplicates.
+
+**Signature:**
+
+```go
+func GetRefsList(paths map[string]interface{}) []string
+```
+
+**Parameters:**
+
+- `paths`: A map representing OpenAPI paths and their operations
+
+**Returns:**
+
+A slice of unique reference identifiers found in the paths object.
+
+**Example**
+
+```yaml
+# input:
+# paths: {
+#   "/pet/{petId}": {
+#     "get": {
+#       "responses": {
+#         "200": {
+#           "schema": {
+#             "$ref": "#/definitions/Pet"
+#           }
+#         },
+#         "404": {
+#           "schema": {
+#             "$ref": "#/definitions/Error"
+#           }
+#         }
+#       },
+#       "parameters": [
+#         {
+#           "schema": {
+#             "$ref": "#/definitions/PetRequest"
+#           }
+#         }
+#       ]
+#     },
+#     "put": {
+#       "responses": {
+#         "200": {
+#           "schema": {
+#             "$ref": "#/definitions/Pet"
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+"{{ getRefsList .paths }}"
+# output:
+# ["Pet", "Error", "PetRequest"]
+```
 
 ---
 
