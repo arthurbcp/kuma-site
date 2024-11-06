@@ -12,6 +12,6 @@ Executa condicionalmente uma run.
 **Exemplo**:
 ```yaml
 - when:
-      condition: "{{ if .data.createBasicStructure }}"
+      condition: "{{.data.createBasicStructure }}"
       run: "generateBasicStructure"
 ```
