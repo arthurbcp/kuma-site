@@ -13,7 +13,6 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Mr. Smith",
-      favicon: "./public/favicon.ico",
       logo: {
         light: "./src/assets/logo.png",
         dark: "./src/assets/logo.png",
