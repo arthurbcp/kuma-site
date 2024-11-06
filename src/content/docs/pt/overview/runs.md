@@ -1,13 +1,13 @@
 ---
 title: Runs
-description: Visão geral de Runs (Kuma Framework)
+description: Visão geral de Runs (Mr. Smith Framework)
 ---
 
 Runs são pipelines de ações configuráveis que permitem definir um processo de execução em etapas a partir de um comando de CLI. Com uma run, você pode criar desde um formulário com interação com o usuário via terminal, realizar chamadas HTTP, transformar arquivos JSON ou YAML em variáveis para uso em templates, gerar estruturas de código personalizadas, adicionar logs e executar outras runs de maneira condicional.
 
 ## Estrutura
 
-Runs são arquivos YAML e devem estar dentro da pasta `.kuma/runs` para serem identificadas.
+Runs são arquivos YAML e devem estar dentro da pasta `.mr-smith/runs` para serem identificadas.
 
 O arquivo deve estar em formato de mapa, onde a chave representa a declaração de uma run.
 
@@ -33,7 +33,7 @@ Uma run é composta pela seguinte estrutura:
 
 Os valores de cada propriedade de cada handler são templates strings de Go, podendo conter variáveis, funções e expressões assim como qualquer outro template. Utilização: `.data.nomeVariavel`.
 
-Para saber mais sobre text templates e como utilizá-los junto ao Kuma, acesse o link: [Text Templates no Go](/complements/go-templates)
+Para saber mais sobre text templates e como utilizá-los junto ao Mr. Smith, acesse o link: [Text Templates no Go](/complements/go-templates)
 
 
 ## Exemplo
@@ -131,4 +131,4 @@ create-unreleased-file:
 
 ## Executando uma run
 
-Confira a documentação completa do comando `kuma exec run` [aqui](/commands-cli/exec-run)
+Confira a documentação completa do comando `mr exec run` [aqui](/commands-cli/exec-run)

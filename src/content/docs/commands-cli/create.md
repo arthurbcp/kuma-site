@@ -1,12 +1,12 @@
 ---
 title: create
-description: Description of the create command (Kuma Framework)
+description: Description of the create command (Mr. Smith Framework)
 ---
 
 Generates new files or directories from templates based on a predefined structure.
 
 ```bash
-kuma create [flags]
+mr create [flags]
 ```
 
 ## Flags
@@ -18,5 +18,5 @@ kuma create [flags]
 ## Example
 
 ```bash
-kuma create --project "./my-project" --from "./my-project-structure.yaml"
+mr create --project "./my-project" --from "./my-project-structure.yaml"
 ```

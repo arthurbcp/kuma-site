@@ -1,6 +1,6 @@
 ---
 title: Modify Handler
-description: Overview of Modify Handler (Kuma Framework)
+description: Overview of Modify Handler (Mr. Smith Framework)
 ---
 
 Alters existing files based on templates, allowing you to insert, replace, or remove content.

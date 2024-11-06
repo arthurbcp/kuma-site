@@ -1,6 +1,6 @@
 ---
 title: Run Handler
-description: Visão geral de Run Handler (Kuma Framework)
+description: Visão geral de Run Handler (Mr. Smith Framework)
 ---
 
 Executa outra run dentro da atual.

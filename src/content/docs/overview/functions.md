@@ -1,9 +1,9 @@
 ---
 title: Functions
-description: Overview of Functions (Kuma Framework)
+description: Overview of Functions (Mr. Smith Framework)
 ---
 
-Kuma imports all the available functions in the [go-sproute](https://github.com/go-sprout/sprout) package, and also includes a series of its own functions that will be described in this document.
+Mr. Smith imports all the available functions in the [go-sproute](https://github.com/go-sprout/sprout) package, and also includes a series of its own functions that will be described in this document.
 
 
 ## Parser Functions

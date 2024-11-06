@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Installation guide for the Kuma Framework
+description: Installation guide for the Mr. Smith Framework
 ---
 
 ### Requirements
@@ -13,7 +13,7 @@ description: Installation guide for the Kuma Framework
 1. **Run the installation command:**
 
    ```bash
-   go install github.com/kuma-framework/kuma/v2@latest
+   go install github.com/mr-smith-org/mr@latest
    ```
 
 2. **Add the Go bin directory to your PATH (if it is not already included):**
@@ -60,7 +60,7 @@ description: Installation guide for the Kuma Framework
 4. **Verify the installation:**
 
    ```bash
-   kuma --help
+   mr --help
    ```
 
-   You should see the help for the Kuma CLI, confirming that the installation was successful.
+   You should see the help for the Mr. Smith CLI, confirming that the installation was successful.

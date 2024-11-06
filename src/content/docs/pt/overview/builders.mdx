@@ -1,6 +1,6 @@
 ---
 title: Builders
-description: Visão geral de Builders (Kuma Framework)
+description: Visão geral de Builders (Mr. Smith Framework)
 ---
 import { FileTree } from '@astrojs/starlight/components';
 
@@ -15,7 +15,7 @@ Um builder é definido da seguinte forma:
 
 `Diretórios:` A estrura é definida em um formato de árvore, onde cada item aninhado da árvore representa um diretório.
 
-`Arquivos:` para que o Kuma identifique um item como um arquivo, é necessário definir uma extensão. Em um arquivo, existem as propriedades:
+`Arquivos:` para que o Mr. Smith identifique um item como um arquivo, é necessário definir uma extensão. Em um arquivo, existem as propriedades:
 - **template:** caminho para o arquivo que contém o template base do arquivo que será criado.
 - **data:** mapa dos dados que serão transformados em variáveis para serem utilizadas no template.
 - **includes:** lista de templates que poderão ser utilizados dentro do template base.
@@ -24,9 +24,9 @@ Um builder é definido da seguinte forma:
 Exemplo:
 
 ```yaml
-# .kuma/base.yaml
+# .mr-smith/base.yaml
 global:
-  packageName: "github.com/kuma-framework/kuma-simple-project"
+  packageName: "github.com/mr-smith-org/simple-project"
 structure:
   src:
     services:
@@ -52,9 +52,9 @@ Resultado:
 ## Variáveis
 
 Como Builders não são nada além do que [templates Go](https://pkg.go.dev/text/template), é possível montá-los dinamicamente através do uso de variáveis.
-Variáveis dentro de templates Go são definidas entre `{{}}`. E no Kuma, precisam ser prefixadas com `.data` para terem efeito, veja o exemplo:
+Variáveis dentro de templates Go são definidas entre `{{}}`. E no Mr. Smith, precisam ser prefixadas com `.data` para terem efeito, veja o exemplo:
 ```yaml
-# .kuma/base.yaml
+# .mr-smith/base.yaml
 global:
   packageName: {{.data.packageName}}
 structure:
@@ -71,7 +71,7 @@ structure:
 ```
 
 Variáveis:
-- packageName: `github.com/kuma-framework/kuma-simple-project`
+- packageName: `github.com/mr-smith-org/simple-project`
 - serviceName: `User`
 
 Resultado:
@@ -141,5 +141,5 @@ structure:
           {{end}}
 
 ```
-Para saber mais sobre text templates e como utilizá-los junto ao Kuma, acesse o link: [Text Templates no Go](/complements/go-templates)
+Para saber mais sobre text templates e como utilizá-los junto ao Mr. Smith, acesse o link: [Text Templates no Go](/complements/go-templates)
 

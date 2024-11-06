@@ -1,6 +1,6 @@
 ---
 title: Create Handler
-description: Overview of Create Handler (Kuma Framework)
+description: Overview of Create Handler (Mr. Smith Framework)
 ---
 
 Generates new files or directories from templates based on a predefined structure.

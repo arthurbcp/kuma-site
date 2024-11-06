@@ -1,6 +1,6 @@
 ---
 title: Primeiros passos
-description: Dê seus primeiros passos com o Kuma Framework
+description: Dê seus primeiros passos com o Mr. Smith Framework
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
@@ -9,13 +9,13 @@ import { FileTree } from '@astrojs/starlight/components';
 - Inicie um repositório git vazio
 
 ```bash
-mkdir kuma-hello-world && cd kuma-hello-world && git init
+mkdir hello-world && cd hello-world && git init
 ```
 
-- Adicione seu primeiro módulo com o Kuma CLI
+- Adicione seu primeiro módulo com o Mr. Smith CLI
 
 ```bash
-kuma module add --repository kuma-framework/kuma-hello-world
+mr module add --repository mr-smith-org/hello-world
 ```
 
 - Siga os passos em seu terminal até que seja exibida a mensagem de "Hello World!"
@@ -26,21 +26,21 @@ kuma module add --repository kuma-framework/kuma-hello-world
 
 Se você seguiu corretamente os passos anteriores, você deverá ter o seguinte diretório:
 <FileTree>
-- .kuma
-    - kuma-hello-world
+- .mr-smith
+    - hello-world
         - runs
             - hello-world-runs.yaml 
         - templates
            -  Main.go
         - base.yaml
-    - kuma-modules.yaml
+    - mr-modules.yaml
 - go.mod
 - main.go
 - .gitmodules
 </FileTree>
 
-Todos os arquivos do kuma ficam dentro da pasta `.kuma`. Dentro dessa pasta, a separação é feita por módulos, (mas você também pode criar runs que não pertencem a nenhum módulo).
-O módulo `kuma-hello-world` é o primeiro módulo que você adicionou ao seu projeto.
+Todos os arquivos do Mr. Smith ficam dentro da pasta `.mr-smith`. Dentro dessa pasta, a separação é feita por módulos, (mas você também pode criar runs que não pertencem a nenhum módulo).
+O módulo `hello-world` é o primeiro módulo que você adicionou ao seu projeto.
 Dentro do módulo, você encontrará os seguintes diretórios:
 
 - `runs`: esse diretório contém os arquivos de configuração de runs, que são arquivos YAML que definem o processo anterior a aplicação dos templates para gerar o código. [Saiba mais](/overview/runs/)
@@ -48,6 +48,6 @@ Dentro do módulo, você encontrará os seguintes diretórios:
 
 O arquivo `base.yaml` é arquivo responsável por definir a estrutura de diretórios e arquivos que serão criados em seu projeto. [Saiba mais](/overview/builders/)
 
-O arquivo `kuma-modules.yaml` é o arquivo de configuração do Kuma, ele contém informações sobre os módulos que você adicionou ao seu projeto e é modificado automaticamente sempre que um módulo for adicionado ou removido.
+O arquivo `mr-modules.yaml` é o arquivo de configuração do Mr. Smith, ele contém informações sobre os módulos que você adicionou ao seu projeto e é modificado automaticamente sempre que um módulo for adicionado ou removido.
 
 Os arquivos `go.mod` e `main.go` foram gerados através da execução da `run` **initial**

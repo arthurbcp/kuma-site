@@ -1,11 +1,11 @@
 ---
 title: Load Handler
-description: Load Handler Overview (Kuma Framework)
+description: Load Handler Overview (Mr. Smith Framework)
 ---
 
 Loads data from a local or remote file (JSON or YAML or text file) and stores it in a variable.
 
-For text files that are not JSON or YAML, Kuma will create a `content` variable for the file content.
+For text files that are not JSON or YAML, Mr. Smith will create a `content` variable for the file content.
 
 **Properties**:
 - **from**: Path to the file to be loaded. Can be a local or remote file.

@@ -1,6 +1,6 @@
 ---
 title: When Handler
-description: Visão geral de When Handler (Kuma Framework)
+description: Visão geral de When Handler (Mr. Smith Framework)
 ---
 
 Executa condicionalmente uma run.

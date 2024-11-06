@@ -1,14 +1,14 @@
 ---
 title: Templates
-description: Overview of Templates (Kuma Framework)
+description: Overview of Templates (Mr. Smith Framework)
 ---
 
-**Templates** are files that will be transformed by Kuma into [Go templates](/complements/go-templates) to generate the final files for a scaffolding process.
+**Templates** are files that will be transformed by Mr. Smith into [Go templates](/complements/go-templates) to generate the final files for a scaffolding process.
 
 ### Variables
 
 
-The variables for templates in Kuma are classified into two types:
+The variables for templates in Mr. Smith are classified into two types:
 
 - **data:** variables passed in the data property of a file in the `structure` field tree within a [builder](/overview/builders). Usage: `.data.variableName`
 
@@ -16,7 +16,7 @@ The variables for templates in Kuma are classified into two types:
 
 ### Extensions
 
-Template files in Kuma can accept any text file extension. However, it is advisable to use one of the extensions below to have *Syntax Highlighting* in your IDE.
+Template files in Mr. Smith can accept any text file extension. However, it is advisable to use one of the extensions below to have *Syntax Highlighting* in your IDE.
 
 Recommended extensions: `*.go.txt, *.go.tpl, *.go.tmpl, *.gtpl, *.tpl.`
 
@@ -92,4 +92,4 @@ export type Pet = {
     tags?: Tag[]
 }
 ```
-To learn more about text templates and how to use them with Kuma, visit the link: [Text Templates in Go](/complements/go-templates)
+To learn more about text templates and how to use them with Mr. Smith, visit the link: [Text Templates in Go](/complements/go-templates)

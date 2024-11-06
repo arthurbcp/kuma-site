@@ -1,9 +1,9 @@
 ---
 title: Funções
-description: Visão geral de Funções (Kuma Framework)
+description: Visão geral de Funções (Mr. Smith Framework)
 ---
 
-O Kuma importa todas as funções disponíveis no pacote [go-sproute](https://github.com/go-sprout/sprout), e também conta com uma série de funções proṕrias que serão descritas nesse documento.
+O Mr. Smith importa todas as funções disponíveis no pacote [go-sproute](https://github.com/go-sprout/sprout), e também conta com uma série de funções proṕrias que serão descritas nesse documento.
 
 
 ## Funções de Parser

@@ -1,13 +1,13 @@
 ---
 title: exec run
-description: Descrição do comando exec run (Kuma Framework)
+description: Descrição do comando exec run (Mr. Smith Framework)
 ---
 
 Executa uma run que não pertence a nenhum um módulo.
 
 
 ```bash
-kuma exec module [flags]
+mr exec module [flags]
 ```
 
 ## Flags
@@ -16,11 +16,11 @@ kuma exec module [flags]
 ## Exemplo
 
 ```bash
-kuma exec run --run setup-database 
+mr exec run --run setup-database 
 ```
 
 ## TUI
 
-Para visualizar a interface de usuário do Kuma, execute apenas `kuma exec run` e as runs que não pertencem a nenhum módulo serão listadas.
+Para visualizar a interface de usuário do Mr. Smith, execute apenas `mr exec run` e as runs que não pertencem a nenhum módulo serão listadas.
 
 ![image](https://github.com/user-attachments/assets/e1daa12e-ca28-40ca-971d-6f6262a39669)

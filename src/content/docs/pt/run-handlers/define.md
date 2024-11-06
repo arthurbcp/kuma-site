@@ -1,6 +1,6 @@
 ---
 title: Define Handler
-description: Visão geral de Define Handler (Kuma Framework)
+description: Visão geral de Define Handler (Mr. Smith Framework)
 ---
 
 Define variáveis que podem ser utilizadas em etapas posteriores da [run](/overview/runs), [builders](/overview/builders) ou [templates](/overview/templates).

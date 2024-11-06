@@ -1,6 +1,6 @@
 ---
 title: Go Text Templates
-description: Guia resumido de text templates em Go para usar junto ao Kuma Framework
+description: Guia resumido de text templates em Go para usar junto ao Mr. Smith Framework
 ---
 
 Os text templates em Go são uma ferramenta poderosa para gerar textos dinâmicos. Elas permitem inserir valores, executar lógica condicional, iterar sobre coleções e muito mais dentro de strings. Neste documento, exploraremos como funcionam as text templates em Go, incluindo exemplos de uso de `range`, `if`, iteração sobre mapas, funções, blocos e composição de templates.
@@ -74,7 +74,7 @@ The total number of items is {{len .data.Items}}
 
 ### Funções Personalizadas
 
-No Kuma, você terá acesso a todas as funções do pacote [go-sproute](https://github.com/go-sprout/sprout) e também uma série de funções customizadas específicas para o Kuma. Acesse o [Guia sobre funções]() para saber mais a respeito.
+No Mr. Smith, você terá acesso a todas as funções do pacote [go-sproute](https://github.com/go-sprout/sprout) e também uma série de funções customizadas específicas para o Mr. Smith. Acesse o [Guia sobre funções]() para saber mais a respeito.
 
 ```
 Original text: {{.data.Text}}

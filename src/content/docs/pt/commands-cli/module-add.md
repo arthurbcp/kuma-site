@@ -1,12 +1,12 @@
 ---
 title: module add
-description: Descrição do comando module add (Kuma Framework)
+description: Descrição do comando module add (Mr. Smith Framework)
 ---
 
-Adiciona um módulo do Kuma ao seu projeto.
+Adiciona um módulo do Mr. Smith ao seu projeto.
 
 ```bash
-kuma module add [flags]
+mr module add [flags]
 ```
 
 ## Flags
@@ -15,11 +15,11 @@ kuma module add [flags]
 ## Exemplo
 
 ```bash
-kuma module add --repository kuma-framework/kuma-hello-world
+mr module add --repository mr-smith-org/hello-world
 ```
 
 ## TUI
 
-Para visualizar a interface de usuário do Kuma, execute apenas `kuma module add` e todos os módulos serão listados.
+Para visualizar a interface de usuário do Mr. Smith, execute apenas `mr module add` e todos os módulos serão listados.
 
 ![image](https://github.com/user-attachments/assets/a47b81c0-7098-4899-ab14-8a891d0dc312)

@@ -1,9 +1,9 @@
 ---
-title: Sobre o Kuma
-description: Guia inicial do Kuma Framework
+title: Sobre o Mr. Smith
+description: Guia inicial do Mr. Smith Framework
 ---
 
-Kuma é um framework poderoso projetado para gerar scaffolds para qualquer linguagem de programação, baseado em [templates Go](https://pkg.go.dev/text/template). Ele simplifica o processo de configuração de novos projetos automatizando a criação de diretórios, arquivos e código base, garantindo consistência e economizando tempo valioso de desenvolvimento. Além disso, o Kuma possui uma TUI personalizável, proporcionando uma experiência intuitiva e eficiente tanto para quem cria scaffolds quanto para quem os utiliza, tornando o processo acessível e fluido para desenvolvedores de todos os níveis.
+Mr. Smith é um framework poderoso projetado para gerar scaffolds para qualquer linguagem de programação, baseado em [templates Go](https://pkg.go.dev/text/template). Ele simplifica o processo de configuração de novos projetos automatizando a criação de diretórios, arquivos e código base, garantindo consistência e economizando tempo valioso de desenvolvimento. Além disso, o Mr. Smith possui uma TUI personalizável, proporcionando uma experiência intuitiva e eficiente tanto para quem cria scaffolds quanto para quem os utiliza, tornando o processo acessível e fluido para desenvolvedores de todos os níveis.
 
 ## Recursos
 

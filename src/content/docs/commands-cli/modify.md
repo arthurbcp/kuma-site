@@ -1,13 +1,13 @@
 ---
 title: modify
-description: Description of the modify command (Kuma Framework)
+description: Description of the modify command (Mr. Smith Framework)
 ---
 
 Modifies existing files based on templates, allowing for content insertion, replacement, or removal.
 
 
 ```bash
-kuma modify [flags]
+mr modify [flags]
 ```
 
 ## Flags
@@ -26,5 +26,5 @@ kuma modify [flags]
 ## Example
 
   ```bash
-  kuma modify --file "./services/service.go" --template "./templates/service.yaml" --mark "#DB_CONNECTION" --action "replace"
+  mr modify --file "./services/service.go" --template "./templates/service.yaml" --mark "#DB_CONNECTION" --action "replace"
   ```  

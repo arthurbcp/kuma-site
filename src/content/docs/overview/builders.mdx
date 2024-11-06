@@ -1,6 +1,6 @@
 ---
 title: Builders
-description: Overview of Builders (Kuma Framework)
+description: Overview of Builders (Mr. Smith Framework)
 ---
 import { FileTree } from '@astrojs/starlight/components';
 
@@ -15,7 +15,7 @@ A builder is defined as follows:
 
 `Directories:` The structure is defined in a tree format, where each nested item in the tree represents a directory.
 
-`Files:` For Kuma to identify an item as a file, an extension must be defined. In a file, there are the properties:
+`Files:` For Mr. Smith to identify an item as a file, an extension must be defined. In a file, there are the properties:
 - **template:** path to the file that contains the base template of the file to be created.
 - **data:** a map of data that will be transformed into variables to be used in the template.
 - **includes:** a list of templates that can be used within the base template.
@@ -23,9 +23,9 @@ A builder is defined as follows:
 Example:
 
 ```yaml
-# .kuma/base.yaml
+# .mr-smith/base.yaml
 global:
-  packageName: "github.com/kuma-framework/kuma-simple-project"
+  packageName: "github.com/mr-smith-org/simple-project"
 structure:
   src:
     services:
@@ -51,9 +51,9 @@ Result:
 ## Variables
 
 Since Builders are nothing more than [Go templates](https://pkg.go.dev/text/template), it is possible to build them dynamically using variables.
-Variables within Go templates are defined between `{{}}`. In Kuma, they need to be prefixed with `.data` to take effect, see the example:
+Variables within Go templates are defined between `{{}}`. In Mr. Smith, they need to be prefixed with `.data` to take effect, see the example:
 ```yaml
-# .kuma/base.yaml
+# .mr-smith/base.yaml
 global:
   packageName: {{.data.packageName}}
 structure:
@@ -70,7 +70,7 @@ structure:
 ```
 
 Variables:
-- packageName: `github.com/kuma-framework/kuma-simple-project`
+- packageName: `github.com/mr-smith-org/simple-project`
 - serviceName: `User`
 
 Result:
@@ -140,5 +140,5 @@ structure:
           {{end}}
 
 ```
-To learn more about text templates and how to use them with Kuma, visit the link: [Text Templates in Go](/complements/go-templates)
+To learn more about text templates and how to use them with Mr. Smith, visit the link: [Text Templates in Go](/complements/go-templates)
 

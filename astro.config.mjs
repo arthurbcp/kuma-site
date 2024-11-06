@@ -12,10 +12,11 @@ export default defineConfig({
   }),
   integrations: [
     starlight({
-      title: "Kuma",
+      title: "Mr. Smith",
+      favicon: "./public/favicon.ico",
       logo: {
-        light: "./src/assets/icon.png",
-        dark: "./src/assets/icon.png",
+        light: "./src/assets/logo.png",
+        dark: "./src/assets/logo.png",
       },
       social: {
         github: "https://github.com/kuma-framework/kuma",

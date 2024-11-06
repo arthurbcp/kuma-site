@@ -1,8 +1,8 @@
 /* Dark mode colors. */
 :root {
   --sl-color-accent-low: #c9b9c3;
-  --sl-color-accent: #ff0074;
-  --sl-color-accent-high: #d80062;
+  --sl-color-accent: #D4C985;
+  --sl-color-accent-high: #D4C985;
   --sl-color-white: #ffffff;
   --sl-color-gray-1: #eceef2;
   --sl-color-gray-2: #c0c2c7;
@@ -11,12 +11,13 @@
   --sl-color-gray-5: #353841;
   --sl-color-gray-6: #24272f;
   --sl-color-black: #17181c;
+  --sl-color-text-invert: var(--sl-color-black)
 }
 /* Light mode colors. */
 :root[data-theme="light"] {
   --sl-color-accent-low: #c9b9c3;
-  --sl-color-accent: #ff0074;
-  --sl-color-accent-high: #d80062;
+  --sl-color-accent: #D4C985;
+  --sl-color-accent-high: #D4C985;
   --sl-color-white: #17181c;
   --sl-color-gray-1: #24272f;
   --sl-color-gray-2: #353841;
@@ -26,8 +27,9 @@
   --sl-color-gray-6: #eceef2;
   --sl-color-gray-7: #f5f6f8;
   --sl-color-black: #ffffff;
+  --sl-color-text-invert: var(--sl-color-black)
 }
 
-.sl-link-button.primary {
-  color: #fff;
+.card :is(h1, h2, h3, h4, h5, h6, .title), .hero h1, .built-with-mr-smith h2 {
+  color: var(--sl-color-accent-high);
 }

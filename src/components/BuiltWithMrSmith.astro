@@ -1,5 +1,5 @@
 ---
-// BuiltWithKuma.astro
+// BuiltWithMr. Smith.astro
 
 export interface Project {
   name: string;
@@ -18,7 +18,7 @@ const { projects, title } = Astro.props;
 import { Card, Icon, LinkButton } from "@astrojs/starlight/components";
 ---
 
-<section class="py-20">
+<section class="py-20 built-with-mr-smith">
   <h2 class="text-3xl font-bold mb-10 text-center">{title}</h2>
     {projects.map((project, index) => (
       <div class={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>

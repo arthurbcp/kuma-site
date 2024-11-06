@@ -1,6 +1,6 @@
 ---
 title: Log Handler
-description: Visão geral de Log Handler (Kuma Framework)
+description: Visão geral de Log Handler (Mr. Smith Framework)
 ---
 
 Permite exibir mensagens no terminal durante a execução da run.

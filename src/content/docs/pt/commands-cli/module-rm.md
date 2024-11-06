@@ -1,12 +1,12 @@
 ---
 title: module rm
-description: Descrição do comando module rm (Kuma Framework)
+description: Descrição do comando module rm (Mr. Smith Framework)
 ---
 
-Remove um módulo do Kuma do seu projeto.
+Remove um módulo do Mr. Smith do seu projeto.
 
 ```bash
-kuma module rm [flags]
+mr module rm [flags]
 ```
 
 ## Flags
@@ -15,5 +15,5 @@ kuma module rm [flags]
 ## Exemplo
 
 ```bash
-kuma module rm --module hello-world
+mr module rm --module hello-world
 ```
