@@ -62,9 +62,20 @@ An input field where the user can type information.
   - **label**: The label that describes the selection field.
   - **description**: A brief description that explains what the field represents.
   - **out**: The name of the variable that will store the value selected by the user. **Required**
-  - **options**: A list of options that the user can choose from. Each option has a `label` (displayed to the user) and a `value` (stored in the variable). **Required**
+  - **options**: A list of options that the user can choose from. Each option has a `label` (displayed to the user) and a `value` (stored in the variable).
+  - **options-from**: Path to a file (local or remote) with a JSON or YAML structure containing an object in the format below to dynamically build the options.
+    ```json
+    {
+      "options": [
+        {
+          "label": "option 1",
+          "value": "value 1"
+        }
+      ]
+    }
+    ```
 
-  **Example**:
+  **Example with options**:
   ```yaml
   - select:
       label: "Choose the type of database"
@@ -77,6 +88,31 @@ An input field where the user can type information.
           value: "mongo"
   ```
 
+  **Example with options-from**:
+  ```yaml
+  - select:
+      label: "Choose the type of database"
+      description: "Select the database that the service will use"
+      out: "dbType"
+      options-from: db-type.json
+  ```
+  ```json
+  //db-types.json
+    {
+      "options": [
+        {
+           "label": "PostgreSQL",
+           "value": "postgres"
+        },
+        {
+          "label": "MongoDB",
+          "value": "mongo"
+        }
+      ]
+    }
+  ```
+  
+
 ---
 
   ### MultiSelect
@@ -85,10 +121,21 @@ An input field where the user can type information.
   - **label**: The label that describes the multi-select field.
   - **description**: A brief description that helps the user understand the purpose of the field.
   - **out**: The name of the variable where the selected options will be stored. **Required**
-  - **options**: A list of available options for multiple selection. **Required**
+  - **options**: A list of available options for multiple selection. 
   - **limit**: The maximum number of options that the user can select.
+  - **options-from**: Path to a file (local or remote) with a JSON or YAML structure containing an object in the format below to dynamically build the options.
+    ```json
+    {
+      "options": [
+        {
+          "label": "option 1",
+          "value": "value 1"
+        }
+      ]
+    }
+    ```
 
-  **Example**:
+  **Example with options**:
   ```yaml
   - multiselect:
       label: "Select the technologies you want to include"
@@ -99,6 +146,30 @@ An input field where the user can type information.
         - label: "Kubernetes"
           value: "k8s"
       limit: 2
+  ```
+
+  **Example with options-from**:
+  ```yaml
+  - multiselect:
+      label: "Select the technologies you want to include"
+      out: "techStack"
+      options-from: devops-tools.json
+      limit: 2
+  ```
+   ```json
+  //devops-tools.json
+    {
+      "options": [
+        {
+           "label": "Docker",
+           "value": "docker"
+        },
+        {
+          "label": "Kubernetes",
+          "value": "ks8"
+        }
+      ]
+    }
   ```
 
 ---

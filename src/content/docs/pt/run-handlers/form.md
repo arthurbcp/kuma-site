@@ -62,9 +62,20 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
   - **label**: O rótulo que descreve o campo de seleção.
   - **description**: Uma breve descrição que explica o que o campo representa.
   - **out**: O nome da variável que armazenará o valor selecionado pelo usuário. **Required**
-  - **options**: Lista de opções que o usuário pode escolher. Cada opção tem uma `label` (exibido para o usuário) e um `value` (armazenado na variável). **Required**
+  - **options**: Lista de opções que o usuário pode escolher. Cada opção tem uma `label` (exibido para o usuário) e um `value` (armazenado na variável). 
+  - **options-from**:  Caminho para um arquivo (local ou remoto) com uma estrura JSON ou YAML contendo um objeto no formato abaixo para montar as options de forma dinâmica
+    ```json
+    {
+      "options": [
+        {
+          "label": "option 1",
+          "value": "value 1"
+        }
+      ]
+    }
+    ```
 
-  **Exemplo**:
+  **Exemplo com options**:
   ```yaml
   - select:
       label: "Escolha o tipo de banco de dados"
@@ -77,6 +88,30 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
           value: "mongo"
   ```
 
+  **Exemplo com options-from**:
+  ```yaml
+  - select:
+      label: "Escolha o tipo de banco de dados"
+      description: "Selecione o banco de dados que o serviço usará"
+      out: "dbType"
+      options-from: db-types.json
+  ```
+  ```json
+  //db-types.json
+    {
+      "options": [
+        {
+           "label": "PostgreSQL",
+           "value": "postgres"
+        },
+        {
+          "label": "MongoDB",
+          "value": "mongo"
+        }
+      ]
+    }
+  ```
+
 ---
 
   ### MultiSelect
@@ -85,10 +120,21 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
   - **label**: O rótulo que descreve o campo de múltipla seleção.
   - **description**: Uma breve descrição que ajuda o usuário a entender o propósito do campo.
   - **out**: O nome da variável onde as opções selecionadas serão armazenadas. **Required**
-  - **options**: Lista de opções disponíveis para seleção múltipla. **Required**
+  - **options**: Lista de opções disponíveis para seleção múltipla. 
   - **limit**: Número máximo de opções que o usuário pode selecionar.
+  - **options-from**:  Caminho para um arquivo (local ou remoto) com uma  estrura JSON ou YAML contendo um objeto no formato abaixo para montar as options de forma dinâmica.
+    ```json
+    {
+      "options": [
+        {
+          "label": "option 1",
+          "value": "value 1"
+        }
+      ]
+    }
+    ```
 
-  **Exemplo**:
+  **Exemplo com options**:
   ```yaml
   - multiselect:
       label: "Selecione as tecnologias que você quer incluir"
@@ -99,6 +145,30 @@ Um campo de entrada de texto onde o usuário pode digitar informações.
         - label: "Kubernetes"
           value: "k8s"
       limit: 2
+  ```
+
+  **Exemplo com options-from**:
+  ```yaml
+   - multiselect:
+      label: "Selecione as tecnologias que você quer incluir"
+      out: "techStack"
+      options-from: devops-tools.json
+      limit: 2
+  ```
+  ```json
+  //devops-tools.json
+    {
+      "options": [
+        {
+           "label": "Docker",
+           "value": "docker"
+        },
+        {
+          "label": "Kubernetes",
+          "value": "ks8"
+        }
+      ]
+    }
   ```
 
 ---

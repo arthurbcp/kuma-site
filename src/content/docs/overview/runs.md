@@ -129,6 +129,6 @@ create-unreleased-file:
 
 ```
 
-## Running a Run
+## Executing a Run
 
 Check the complete documentation for the `mr exec run` command [here](/commands-cli/exec-run)
