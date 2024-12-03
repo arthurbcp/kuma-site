@@ -3,11 +3,11 @@ title: Modules
 description: Overview of Modules (Mr. Smith Framework)
 ---
 
-The Mr. Smith module system allows developers to create, share, and reuse template structures in a modular way. These modules are independent repositories that contain [templates](/overflow/templates), [builders](/overflow/builders), and [runs](/overview/runs).
+The Mr. Smith module system allows developers to create, share, and reuse template structures in a modular way. These modules are independent repositories that contain [templates](/overflow/templates), [builders](/overflow/builders), and [pipelines](/overview/pipelines).
 
 ## Structure
 
-The structure of a module in Mr. Smith is the same as you are already familiar with. Any GitHub repository with a `.mr-smith` folder at the root containing at least one run can become a module if you add a file called `mr-config.yaml` in the root of the repository.
+The structure of a module in Mr. Smith is the same as you are already familiar with. Any GitHub repository with a `.mr-smith` folder at the root containing at least one pipeline can become a module if you add a file called `mr-config.yaml` in the root of the repository.
 
 The `mr-config.yaml` file should follow the following format:
 
@@ -28,8 +28,8 @@ Check the complete documentation of the `mr module add` command [here](/commands
 
 ## Calling a run from a module
 
-Check the complete documentation of the `mr exec module` command [here](/commands-cli/exec-module).
+Check the complete documentation of the `mr run` command [here](/commands-cli/run).
 
 ## Removing a module
 
-Check the complete documentation of the `mr module rm` command [here](/commands-cli/exec-module).
+Check the complete documentation of the `mr module rm` command [here](/commands-cli/module-rm).

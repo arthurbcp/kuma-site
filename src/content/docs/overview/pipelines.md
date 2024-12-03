@@ -1,37 +1,37 @@
 ---
-title: Runs
-description: Overview of Runs (Mr. Smith Framework)
+title: Pipelines
+description: Overview of Pipelines (Mr. Smith Framework)
 ---
 
-Runs are configurable action pipelines that allow you to define a step-by-step execution process from a CLI command. With a run, you can create anything from a form with user interaction via terminal, make HTTP calls, transform JSON or YAML files into variables for use in templates, generate custom code structures, add logs, and conditionally execute other runs.
+Pipelines allow you to define a step-by-step execution process from a CLI command. With a pipeline, you can create anything from a form with user interaction via terminal, make HTTP calls, transform JSON or YAML files into variables for use in templates, generate custom code structures, add logs, and conditionally execute other pipelines.
 
 ## Structure
 
-Runs are YAML files and must be located within the `.mr-smith/runs` folder to be recognized.
+Pipelines are YAML files and must be located within the `.mr-smith/pipelines` folder to be recognized.
 
-The file must be in map format, where the key represents the declaration of a run.
+The file must be in map format, where the key represents the declaration of a pipeline.
 
-A run is composed of the following structure:
+A pipeline is composed of the following structure:
 
-- **description:** Description of the action to be performed by the run.
-- **steps:** Array of steps (handlers) that will be executed in order when calling a run.
-- **visible:** Boolean value that determines if the run will be visible for execution via terminal (`true`) or only for other runs (`false`). Default value: `true`.
+- **description:** Description of the action to be performed by the pipeline.
+- **steps:** Array of steps  that will be executed in order when calling a pipeline.
+- **visible:** Boolean value that determines if the pipeline will be visible for execution via terminal (`true`) or only for other pipelines (`false`). Default value: `true`.
 
-## Handlers
+## Steps
 
-- [Form](/run-handlers/form): Used to display interactive forms in the terminal.
-- [Cmd](/run-handlers/cmd): Executes commands in the terminal during the run.
-- [Define](/run-handlers/define): Defines new variables during the run execution.
-- [Log](/run-handlers/log): Allows displaying messages in the terminal during the run execution.
-- [Load](/run-handlers/load): Loads data from a local or remote file (JSON or YAML) and stores it in a variable.
-- [Create](/run-handlers/create): Generates new files or directories from templates based on a predefined structure.
-- [Modify](/run-handlers/modify): Alters existing files based on templates, allowing for content insertion, replacement, or removal.
-- [Run](/run-handlers/run): Executes another run within the current one.
-- [When](/run-handlers/when): Conditionally executes a run.
+- [Form](/pipeline-steps/form): Used to display interactive forms in the terminal.
+- [Cmd](/pipeline-steps/cmd): Executes commands in the terminal during the pipeline execution.
+- [Define](/pipeline-steps/define): Defines new variables during the pipeline execution.
+- [Log](/pipeline-steps/log): Allows displaying messages in the terminal during the pipeline execution.
+- [Load](/pipeline-steps/load): Loads data from a local or remote file (JSON or YAML) and stores it in a variable.
+- [Create](/pipeline-steps/create): Generates new files or directories from templates based on a predefined structure.
+- [Modify](/pipeline-steps/modify): Alters existing files based on templates, allowing for content insertion, replacement, or removal.
+- [Pipeline](/pipeline-steps/pipeline): Executes another pipeline within the current one.
+- [When](/pipeline-steps/when): Conditionally executes a pipeline.
 
 ## Using Variables
 
-The values of each property of each handler are Go template strings, which may contain variables, functions, and expressions just like any other template. Usage: `.data.variableName`.
+The values of each property of each step are Go template strings, which may contain variables, functions, and expressions just like any other template. Usage: `.data.variableName`.
 
 To learn more about text templates and how to use them with Mr. Smith, visit the link: [Text Templates in Go](/complements/go-templates)
 
@@ -92,7 +92,7 @@ add-change:
                     out: changeDescription
         - when:
             condition: "{{ not (fileExists \"unreleased.json\") }}"
-            run: create-unreleased-file
+            pipeline: create-unreleased-file
         
         - load:
             from: unreleased.json
@@ -129,6 +129,6 @@ create-unreleased-file:
 
 ```
 
-## Executing a Run
+## Executing a Pipeline
 
-Check the complete documentation for the `mr exec run` command [here](/commands-cli/exec-run)
+Check the complete documentation for the `mr run` command [here](/commands-cli/run)

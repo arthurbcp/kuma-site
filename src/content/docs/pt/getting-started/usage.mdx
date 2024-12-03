@@ -28,8 +28,8 @@ Se você seguiu corretamente os passos anteriores, você deverá ter o seguinte 
 <FileTree>
 - .mr-smith
     - hello-world
-        - runs
-            - hello-world-runs.yaml 
+        - pipelines
+            - hello-world-pipelines.yaml 
         - templates
            -  Main.go
         - base.yaml
@@ -38,15 +38,15 @@ Se você seguiu corretamente os passos anteriores, você deverá ter o seguinte 
 - main.go
 </FileTree>
 
-Todos os arquivos do Mr. Smith ficam dentro da pasta `.mr-smith`. Dentro dessa pasta, a separação é feita por módulos, (mas você também pode criar runs que não pertencem a nenhum módulo).
+Todos os arquivos do Mr. Smith ficam dentro da pasta `.mr-smith`. Dentro dessa pasta, a separação é feita por módulos, (mas você também pode criar pipelines que não pertencem a nenhum módulo).
 O módulo `hello-world` é o primeiro módulo que você adicionou ao seu projeto.
 Dentro do módulo, você encontrará os seguintes diretórios:
 
-- `runs`: esse diretório contém os arquivos de configuração de runs, que são arquivos YAML que definem o processo anterior a aplicação dos templates para gerar o código. [Saiba mais](/overview/runs/)
+- `pipelines`: esse diretório contém os arquivos de configuração de pipelines, que são arquivos YAML que definem o processo anterior a aplicação dos templates para gerar o código. [Saiba mais](/overview/pipelines/)
 - `templates`: esse diretório contém os arquivos de template que serão usados para gerar o código. [Saiba mais](/overview/templates/)
 
 O arquivo `base.yaml` é arquivo responsável por definir a estrutura de diretórios e arquivos que serão criados em seu projeto. [Saiba mais](/overview/builders/)
 
 O arquivo `mr-modules.yaml` é o arquivo de configuração do Mr. Smith, ele contém informações sobre os módulos que você adicionou ao seu projeto e é modificado automaticamente sempre que um módulo for adicionado ou removido.
 
-Os arquivos `go.mod` e `main.go` foram gerados através da execução da `run` **initial**
+Os arquivos `go.mod` e `main.go` foram gerados através da execução do `pipeline` **initial**

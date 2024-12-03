@@ -1,6 +1,6 @@
 ---
-title: Modify Handler
-description: Overview of Modify Handler (Mr. Smith Framework)
+title: Modify Step
+description: Overview of Modify Step (Mr. Smith Framework)
 ---
 
 Alters existing files based on templates, allowing you to insert, replace, or remove content.

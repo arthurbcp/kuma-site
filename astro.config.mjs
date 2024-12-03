@@ -47,8 +47,8 @@ export default defineConfig({
           autogenerate: { directory: 'overview' },
         },
         {
-          label: "Run Handlers",
-          autogenerate: { directory: 'run-handlers' },
+          label: "Pipeline Steps",
+          autogenerate: { directory: 'pipeline-steps' },
         },
         {
           label:"CLI Commands",

@@ -9,5 +9,5 @@ Mr. Smith is a powerful framework designed to generate scaffolds for any program
 
 - Customize the directory and file structure of your project using [Go templates](https://pkg.go.dev/text/template).
 - Integration with GitHub to download predefined community templates or for personal use via private repositories.
-- Ability to create custom CLI/TUI command workflows through a YAML file using runs.
-- Use of dynamic variables applicable to templates. Variables can be extracted from a local YAML or JSON file or fetched from a public URL. They can also be obtained from user input during the execution of a [run](cmd/commands/exec).
+- Ability to create custom CLI/TUI command workflows through a YAML file using pipelines.
+- Use of dynamic variables applicable to templates. Variables can be extracted from a local YAML or JSON file or fetched from a public URL. They can also be obtained from user input during the execution of a [pipeline](/overview/pipelines).

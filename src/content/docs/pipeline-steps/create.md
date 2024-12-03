@@ -1,6 +1,6 @@
 ---
-title: Create Handler
-description: Overview of Create Handler (Mr. Smith Framework)
+title: Create Step
+description: Overview of Create Step (Mr. Smith Framework)
 ---
 
 Generates new files or directories from templates based on a predefined structure.

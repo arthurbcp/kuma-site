@@ -3,11 +3,11 @@ title: Módulos
 description: Visão geral de Módulos (Mr. Smith Framework)
 ---
 
-O sistema de módulos do Mr. Smith permite que desenvolvedores criem, compartilhem e reutilizem estruturas de templates de forma modular. Esses módulos são repositórios independentes que contêm [templates](/overflow/templates), [builders](/overflow/builders) e [runs](/overview/runs).
+O sistema de módulos do Mr. Smith permite que desenvolvedores criem, compartilhem e reutilizem estruturas de templates de forma modular. Esses módulos são repositórios independentes que contêm [templates](/overflow/templates), [builders](/overflow/builders) e [pipelines](/overview/pipelines).
 
 ## Estrutura
 
-A estrutura de um módulo no Mr. Smith é a mesma que você já está acostumado. Qualquer repositório do Github com uma pasta `.mr-smith` na raiz contendo pelo menos uma run, pode se tornar um módulo se você adicionar um arquivo chamado `mr-config.yaml` na raiz do repositório.
+A estrutura de um módulo no Mr. Smith é a mesma que você já está acostumado. Qualquer repositório do Github com uma pasta `.mr-smith` na raiz contendo pelo menos um pipeline, pode se tornar um módulo se você adicionar um arquivo chamado `mr-config.yaml` na raiz do repositório.
 
 O arquivo `mr-config.yaml`, deve seguir o seguinte formato:
 
@@ -26,10 +26,10 @@ Ao adicionar um módulo ao seu projeto, o Mr. Smith copiará o repositório do m
 
 Confira a documentação completa do comando `mr module add` [aqui](/commands-cli/module-add).
 
-## Chamando uma run de um módulo
+## Chamando um pipeline de um módulo
 
-Confira a documentação completa do comando `mr exec module` [aqui](/commands-cli/exec-module)
+Confira a documentação completa do comando `mr run` [aqui](/commands-cli/run)
 
 ## Removendo um módulo
 
-Confira a documentação completa do comando `mr module rm` [aqui](/commands-cli/exec-module)
+Confira a documentação completa do comando `mr module rm` [aqui](/commands-cli/module-rm)

@@ -1,37 +1,37 @@
 ---
-title: Runs
-description: Visão geral de Runs (Mr. Smith Framework)
+title: Pipelines
+description: Visão geral de Pipelines (Mr. Smith Framework)
 ---
 
-Runs são pipelines de ações configuráveis que permitem definir um processo de execução em etapas a partir de um comando de CLI. Com uma run, você pode criar desde um formulário com interação com o usuário via terminal, realizar chamadas HTTP, transformar arquivos JSON ou YAML em variáveis para uso em templates, gerar estruturas de código personalizadas, adicionar logs e executar outras runs de maneira condicional.
+Pipelines permitem definir um processo de execução em etapas a partir de um comando de CLI. Com uma pipeline, você pode criar desde um formulário com interação com o usuário via terminal, realizar chamadas HTTP, transformar arquivos JSON ou YAML em variáveis para uso em templates, gerar estruturas de código personalizadas, adicionar logs e executar outras pipelines de maneira condicional.
 
 ## Estrutura
 
-Runs são arquivos YAML e devem estar dentro da pasta `.mr-smith/runs` para serem identificadas.
+Pipelines são arquivos YAML e devem estar dentro da pasta `.mr-smith/pipelines` para serem identificadas.
 
-O arquivo deve estar em formato de mapa, onde a chave representa a declaração de uma run.
+O arquivo deve estar em formato de mapa, onde a chave representa a declaração de uma pipeline.
 
-Uma run é composta pela seguinte estrutura:
+Um pipeline é composta pela seguinte estrutura:
 
-- **description:** Descrição da ação que será realizada pela run.
-- **steps:** Array de passos (handlers) que serão executados em ordem ao chamar uma run.
-- **visible:** Valor booleano para determinar se a run será visível para execução via terminal (`true`) ou apenas para outras runs (`false`). Valor padrão: `true`.
+- **description:** Descrição da ação que será realizada pela pipeline.
+- **steps:** Array de passos que serão executados em ordem ao chamar uma pipeline.
+- **visible:** Valor booleano para determinar se a pipeline será visível para execução via terminal (`true`) ou apenas para outros pipelines (`false`). Valor padrão: `true`.
 
-## Handlers
+## Steps
 
-- [Form](/run-handlers/form): É usado para exibir formulários interativos no terminal.
-- [Cmd](/run-handlers/cmd): Executa comandos no terminal durante a run.
-- [Define](/run-handlers/define): Define novas variáveis durante a execução da run.
-- [Log](/run-handlers/log): Permite exibir mensagens no terminal durante a execução da run.
-- [Load](/run-handlers/load): Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
-- [Create](/run-handlers/create): Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
-- [Modify](/run-handlers/modify): Altera arquivos existentes com base em templates, permitindo inserir, substituir ou remover conteúdo.
-- [Run](/run-handlers/run): Executa outra run dentro da atual.
-- [When](/run-handlers/when): Executa condicionalmente uma run.
+- [Form](/pipeline-steps/form): É usado para exibir formulários interativos no terminal.
+- [Cmd](/pipeline-steps/cmd): Executa comandos no terminal durante a execução de um pipeline.
+- [Define](/pipeline-steps/define): Define novas variáveis durante a execução de um pipeline.
+- [Log](/pipeline-steps/log): Permite exibir mensagens no terminal durante a execução de um pipeline.
+- [Load](/pipeline-steps/load): Carrega dados de um arquivo local ou remoto (JSON ou YAML) e os armazena em uma variável.
+- [Create](/pipeline-steps/create): Gera novos arquivos ou diretórios a partir de templates com base em uma estrutura predefinida.
+- [Modify](/pipeline-steps/modify): Altera arquivos existentes com base em templates, permitindo inserir, substituir ou remover conteúdo.
+- [Pipeline](/pipeline-steps/pipeline): Executa outro pipeline dentro da atual.
+- [When](/pipeline-steps/when): Executa condicionalmente um pipeline.
 
 ## Uso de variáveis
 
-Os valores de cada propriedade de cada handler são templates strings de Go, podendo conter variáveis, funções e expressões assim como qualquer outro template. Utilização: `.data.nomeVariavel`.
+Os valores de cada propriedade de cada passo são templates strings de Go, podendo conter variáveis, funções e expressões assim como qualquer outro template. Utilização: `.data.nomeVariavel`.
 
 Para saber mais sobre text templates e como utilizá-los junto ao Mr. Smith, acesse o link: [Text Templates no Go](/complements/go-templates)
 
@@ -129,6 +129,6 @@ create-unreleased-file:
 
 ```
 
-## Executando uma run
+## Executando um pipeline
 
-Confira a documentação completa do comando `mr exec run` [aqui](/commands-cli/exec-run)
+Confira a documentação completa do comando `mr run` [aqui](/commands-cli/run)

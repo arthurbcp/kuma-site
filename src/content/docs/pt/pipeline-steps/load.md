@@ -1,6 +1,6 @@
 ---
-title: Load Handler
-description: Visão geral de Load Handler (Mr. Smith Framework)
+title: Load Step
+description: Visão geral de Load Step (Mr. Smith Framework)
 ---
 
 Carrega dados de um arquivo local ou remoto (JSON ou YAML ou arquivo de texto) e os armazena em uma variável.

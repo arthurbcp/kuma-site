@@ -1,6 +1,6 @@
 ---
-title: Load Handler
-description: Load Handler Overview (Mr. Smith Framework)
+title: Load Step
+description: Load Step Overview (Mr. Smith Framework)
 ---
 
 Loads data from a local or remote file (JSON or YAML or text file) and stores it in a variable.
